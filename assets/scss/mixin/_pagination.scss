@@ -1,0 +1,79 @@
+.pagination {
+   display: flex;
+
+   & li {
+      border: 1px solid #dddddd;
+      margin-left: -1px;
+      overflow: hidden;
+
+      &:first-child {
+         border-radius: 5px 0 0 5px;
+      }
+
+      &:last-child {
+         border-radius: 0 5px 5px 0;
+      }
+
+      & a {
+         display: inline-block;
+         color: #007bff;
+         padding: 7px 15px;
+         transition: all 0.3s ease-in-out;
+
+         &:hover {
+            background: #f0f0f0;
+         }
+      }
+   }
+
+   @each $maps,
+   $name in $all_colors {
+
+      @each $key,
+      $value in $name {
+         &.#{$key} {
+            & li {
+               border: 1px solid $value !important;
+
+               & a {
+                  color: $value;
+
+                  &:hover {
+                     background: transparentize($value, 0.9);
+                  }
+               }
+            }
+
+            &.fill {
+               & li {
+                  border: 1px solid lighten($value, 8) !important;
+                  background: $value;
+
+                  & a {
+                     color: #dddddd;
+
+                     &:hover {
+                        background: darken($value, 10);
+                     }
+                  }
+               }
+            }
+
+            &.hover_fill {
+               & li {
+                  border: 1px solid $value !important;
+
+                  & a {
+                     color: $value;
+
+                     &:hover {
+                        color: #dddddd;
+                        background: darken($value, 10);
+                     }
+                  }
+               }
+            }
+         }
+      }
+   }
+}

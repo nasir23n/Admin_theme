@@ -1,0 +1,11 @@
+// card 
+.card {
+    padding: rem(15);
+    box-shadow: 0 rem(4) rem(12) rgba(20, 20, 20, 0.1), 0 rem(4) rem(24) rgba(20, 20, 20, 0.1);
+    margin: rem(15) 0;
+    border-radius: rem(4);
+    
+    &[class*="bg_"] {
+        color: #ffffff;
+    }
+}

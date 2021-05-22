@@ -1,0 +1,111 @@
+/* Modal Start*/
+.modal_wrap {
+   display: none;
+   align-items: baseline;
+   justify-content: center;
+   position: fixed;
+   left: 0;
+   right: 0;
+   top: 0;
+   bottom: 0;
+   background: rgba(0, 0, 0, .4);
+   z-index: 99999999;
+   animation-name: fadeIn;
+   animation-timing-function: ease-in;
+   animation-fill-mode: both;
+   animation-iteration-count: 1;
+   animation-duration: 0.2s;
+   overflow-y: auto;
+   &>.modal {
+      max-width: 500px;
+      width: 100%;
+      margin: 20px 10px;
+      z-index: 999999999;
+      box-shadow: none !important;
+      animation-duration: 0.3s;
+      &.x1 {
+         max-width: 600px;
+      }
+
+      &.x2 {
+         max-width: 700px;
+      }
+
+      &.x3 {
+         max-width: 800px;
+      }
+
+      &.x4 {
+         max-width: 900px;
+      }
+
+      & .header {
+         position: relative;
+         padding-right: 60px;
+         min-height: 50px;
+         & .close {
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            top: 0;
+            right: 0;
+            background: transparent;
+
+            &::before {
+               content: '';
+               display: block;
+               width: 25px;
+               height: 2px;
+               background: #333;
+               position: absolute;
+               top: 50%;
+               left: 50%;
+               transform: translate(-50%, -50%) rotate(45deg);
+               transition: all 0.3s ease-in-out;
+               box-shadow: 0 0px 2px 0 rgba(255, 255, 255, 0.5);
+            }
+
+            &::after {
+               content: '';
+               display: block;
+               width: 25px;
+               height: 2px;
+               background: #333;
+               position: absolute;
+               top: 50%;
+               left: 50%;
+               transform: translate(-50%, -50%) rotate(-45deg);
+               transition: all 0.3s ease-in-out;
+               box-shadow: 0 0px 2px 0 rgba(255, 255, 255, 0.5);
+            }
+
+            &:hover {
+               &::before {
+                  transform: translate(-50%, -50%) rotate(225deg);
+               }
+
+               &::after {
+                  transform: translate(-50%, -50%) rotate(-225deg);
+               }
+            }
+
+            &.light {
+               &::before {
+                  background: #dddddd;
+               }
+
+               &::after {
+                  background: #dddddd;
+               }
+            }
+         }
+      }
+
+      &>.footer {
+         display: flex;
+         justify-content: flex-end;
+         padding: 5px 10px;
+      }
+   }
+}
+

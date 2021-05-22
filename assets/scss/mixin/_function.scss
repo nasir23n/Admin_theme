@@ -1,0 +1,41 @@
+// Color maker function
+@function make_color($nam) {
+	@if map-has-key($brand, $nam) {
+		@return map-get($brand, $nam);
+	}
+
+	@else if map-has-key($social, $nam) {
+		@return map-get($social, $nam);
+	}
+
+	@else if map-has-key($fave, $nam) {
+		@return map-get($fave, $nam);
+	}
+
+	@else if map-has-key($gray, $nam) {
+		@return map-get($gray, $nam);
+	}
+
+	@else {
+		@return false;
+	}
+}
+
+@function rem($take) {
+	@return $take / 16+rem;
+}
+
+@function px($take) {
+	@return $take * 16+px;
+}
+
+// gatting breakpoint.
+@function breakpoint($nam) {
+	@if map-has-key($breakpoints, $nam) {
+		@return map-get($breakpoints, $nam);
+	}
+
+	@else {
+		@return false;
+	}
+}

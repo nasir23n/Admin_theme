@@ -1,0 +1,90 @@
+@each $key,
+$value in $border {
+    .b_#{$key} {
+        border: $value solid make_color('default');
+    }
+}
+
+@each $key,
+$value in $border {
+    .b_bottom_#{$key} {
+        border-bottom: $value solid make_color('default');
+    }
+}
+
+@each $key,
+$value in $border {
+    .b_left_#{$key} {
+        border-left: $value solid make_color('default');
+    }
+}
+
+@each $key,
+$value in $border {
+    .b_top_#{$key} {
+        border-top: $value solid make_color('default');
+    }
+}
+
+@each $key,
+$value in $border {
+    .b_right_#{$key} {
+        border-right: $value solid make_color('default');
+    }
+}
+
+@each $maps,
+$name in $all_colors {
+
+    @each $key,
+    $value in $name {
+        .b_#{$key} {
+            border-color: $value !important;
+        }
+    }
+}
+
+///////////////////////////////////////////////
+.b_none {
+    border: none !important;
+}
+
+.b_bottom_none {
+    border-bottom: none !important;
+}
+
+.b_left_none {
+    border-left: none !important;
+}
+
+.b_top_none {
+    border-top: none !important;
+}
+
+.b_right_none {
+    border-right: none !important;
+}
+
+///////////////////////////////////////////////
+///////////////////////////////////////////////
+.b_transparent {
+    border-color: transparent !important;
+}
+
+.b_bottom_transparent {
+    border-bottom-color: transparent !important;
+}
+
+.b_left_transparent {
+    border-left-color: transparent !important;
+}
+
+.b_top_transparent {
+    border-top-color: transparent !important;
+}
+
+.b_right_transparent {
+    border-right-color: transparent !important;
+}
+
+///////////////////////////////////////////////

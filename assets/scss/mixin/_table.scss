@@ -1,0 +1,110 @@
+/* table start */
+.table_responsive {
+   overflow-x: auto;
+   -webkit-overflow-scrolling: touch;
+}
+
+$bor: #dee2e6;
+$bg: #f5f5f5;
+
+.table {
+   width: 100%;
+   border-collapse: collapse;
+   margin: rem(15) 0 rem(20);
+
+   & tr>th,
+   & tr>td {
+      padding: rem(8) rem(10);
+      text-align: inherit;
+   }
+
+   & tr>th {
+      background: $bg;
+      white-space: nowrap;
+   }
+
+   &.bordered th,
+   &.bordered td {
+      border: rem(1) solid $bor;
+   }
+   &.bottom_bordered th,
+   &.bottom_bordered td {
+      border-bottom: rem(1) solid $bor;
+   }
+
+   &.hover tr:hover {
+      background: #f0f0f0;
+   }
+   &.transparent_header tr>th,
+   &.clear_header tr>th {
+      background: transparent !important;
+      color: #333333 !important;
+   }
+
+   &.even {
+      tr:nth-child(even) {
+         background: $bg;
+      }
+   }
+
+   &.odd {
+      tr:nth-child(odd) {
+         background: $bg;
+      }
+   }
+
+   @each $maps, $name in $all_colors {
+      @each $key, $value in $name {
+         &.#{$key} {
+            tr>th {
+               background: #{$value};
+               color: #ffffff;
+            }
+
+            &.yellow tr th,
+            &.yellow tr td {
+               color: #333333 !important;
+            }
+
+            &.hover tr:hover {
+               background: transparentize($value, 0.7);
+            }
+
+            & tr>th,
+            & tr>td {
+               border-color: lighten($value, 5);
+            }
+
+            // &.fill {
+            //    background: #{$value} !important;
+            //    color: #fff;
+
+            //    & th {
+            //       background: darken($value, 5);
+            //    }
+
+            //    & tr>th,
+            //    & tr>td {
+            //       border-color: lighten($value, 10);
+            //    }
+
+            //    tr:hover {
+            //       background: lighten($value, 5) !important;
+            //    }
+
+            //    &.even {
+            //       tr:nth-child(even) {
+            //          background: lighten($value, 10) !important;
+            //       }
+            //    }
+
+            //    &.odd {
+            //       tr:nth-child(odd) {
+            //          background: lighten($value, 10) !important;
+            //       }
+            //    }
+            // }
+         }
+      }
+   }
+}

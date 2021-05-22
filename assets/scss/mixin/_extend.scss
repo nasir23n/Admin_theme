@@ -1,0 +1,25 @@
+// transition start 
+%trans1 { transition: $trans1; }
+%trans2 { transition: $trans2; }
+%trans3 { transition: $trans3; }
+%trans4 { transition: $trans4; }
+%trans5 { transition: $trans5; }
+// transition end 
+
+
+// shadow start 
+%sdw1 { box-shadow: $sdw1; }
+%sdw2 { box-shadow: $sdw2; }
+%sdw3 { box-shadow: $sdw3; }
+%sdw4 { box-shadow: $sdw4; }
+%sdw5 { box-shadow: $sdw5; }
+// shadow end 
+
+// clearfix start 
+%clear {
+    content: '' !important;
+	display: block !important;
+	clear: both !important;
+	position: relative !important;
+}
+// clearfix end 

@@ -1,0 +1,23 @@
+.notice_box {
+  padding: 20px 10px;
+  background: #ffffff;
+  border-left: 5px solid #cccccc;
+  margin: 20px 0;
+  border-radius: 8px;
+  box-shadow: $shadow_md;
+
+  @each $maps,
+  $name in $all_colors {
+
+    @each $key,
+    $value in $name {
+      &.#{$key} {
+        border-left: 5px solid $value;
+
+        &.fill {
+          background: mix(#fff, $value, 80);
+        }
+      }
+    }
+  }
+}

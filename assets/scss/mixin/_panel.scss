@@ -1,0 +1,78 @@
+/* Panel design start */
+
+$panel_border: #e6e6e6;
+
+.panel {
+  background: #fff;
+  min-height: rem(10);
+  // box-shadow: 0 rem(2) rem(10) rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.08), 0 2px 4px 0 rgba(0, 0, 0, 0.12);
+  position: relative;
+  margin-bottom: rem(16);
+  margin-top: rem(5);
+
+  &>.header {
+    padding: rem(15);
+    border-bottom: rem(1) solid $panel_border; 
+
+    &>* {
+      margin: 0 !important;
+    }
+
+    &:after,
+    &:before {
+      @extend %clear;
+    }
+  }
+
+  &>.body {
+    font-size: rem(15);
+    color: #555;
+    padding: rem(15);
+  }
+
+  &>.footer {
+    border-top: rem(1) solid $panel_border;
+    width: 100%;
+    padding: rem(15);
+
+    &:after,
+    &:before {
+      @extend %clear;
+    }
+  }
+}
+
+// .panel {
+
+//   @each $maps, $name in $all_colors {
+//     @each $key, $value in $name {
+//       &.#{$key} {
+//         &>.header {
+//           background: $value;
+//           color: #ffffff;
+//           border-bottom: rem(1) solid darken($value, 10);
+//         }
+
+//         &>.footer {
+//           background: $value;
+//           color: #ffffff;
+//           border-top: rem(1) solid darken($value, 10);
+//         }
+
+//         &.fill {
+//           &>.body {
+//             background: darken($value, 5);
+//             color: #ffffff;
+//           }
+//         }
+//       }
+//     }
+//   }
+
+//   &.yellow>.header,
+//   &.yellow>.footer {
+//     color: #333333 !important;
+//   }
+// }
+

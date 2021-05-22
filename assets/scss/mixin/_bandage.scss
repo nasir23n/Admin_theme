@@ -1,0 +1,24 @@
+.badges {
+  display: inline-block;
+  padding: 3px 7px;
+  font-size: 75%;
+  line-height: 1;
+  text-align: center;
+  border-radius: 2px;
+  background: #d9e2ff;
+  position: relative;
+  top: -1px;
+  margin-left: 3px;
+
+  @each $maps,
+  $name in $all_colors {
+
+    @each $key,
+    $value in $name {
+      &.#{$key} {
+        background: $value;
+        color: #ffffff;
+      }
+    }
+  }
+}

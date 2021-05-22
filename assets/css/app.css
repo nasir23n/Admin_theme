@@ -1,0 +1,84 @@
+*, ::before, ::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Roboto, Helvetica Neue, sans-serif;
+}
+
+/* Make nerrow and custom color scrollbar */
+::-webkit-scrollbar {
+  /* scrollbar width */
+  width: 8px;
+  height: 0px;
+}
+
+::-webkit-scrollbar-track {
+  /* scrollable area background */
+  background: #262f3d;
+}
+
+::-webkit-scrollbar-thumb {
+  /* Make scroller thumb or scroll controller background */
+  background-color: #929292;
+  border-radius: 8px;
+  border: 1px solid #262f3d;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  /* scroll controller hoverd background */
+  background: #a0a098;
+}
+
+::-webkit-scrollbar-thumb:active {
+  /* scroll controller active background */
+  background: #646461;
+}
+
+a {
+  text-decoration: none;
+}
+
+/* ------------------------------------ */
+.aside {
+  width: 256px;
+  height: 100vh;
+  background-color: #051E34;
+  background-image: url("../image/nav_bg.png");
+  background-repeat: no-repeat;
+  background-position: left 0 bottom 0;
+  background-size: 256px 70vh;
+  background-attachment: fixed;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+.aside .top {
+  width: 256px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  color: #fff;
+  text-transform: uppercase;
+  font-weight: bold;
+  letter-spacing: 2px;
+  background-color: #051E34;
+  transition: all 0.3s ease-in-out;
+}
+.aside .top:hover {
+  background-color: #193044;
+}
+.aside .aside_content {
+  color: #fff;
+  overflow-y: auto;
+  height: calc(100vh - 50px);
+}
+.aside .aside_content::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/*# sourceMappingURL=app.css.map */

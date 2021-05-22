@@ -1,0 +1,39 @@
+/* color variable */
+:root { 
+   @each $maps, $name in $all_colors { 
+      @each $key, $value in $name {
+         --#{$key}: #{$value};
+      }
+   }
+}
+
+/* background class */
+@each $maps, $name in $all_colors { 
+   @each $key, $value in $name {
+      .bg_#{$key} {
+         background: #{$value} !important;
+      }
+   }
+}
+
+.bg_white {
+   background: white !important;
+}
+
+.bg_transparent,
+.bg_none {
+   background: transparent !important;
+}
+
+/* color class */
+@each $maps, $name in $all_colors { 
+   @each $key, $value in $name {
+      .color_#{$key} {
+         color: #{$value} !important;
+      }
+   }
+}
+
+.color_white {
+   color: white !important;
+}

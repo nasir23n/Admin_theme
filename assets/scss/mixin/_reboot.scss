@@ -1,0 +1,167 @@
+/*/////////////////////////////*/
+/*[ REBOOT SOME DEFULT STYLE ]*/
+/*///////////////////////////*/
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none !important;
+  list-style: none;
+}
+
+body {
+  font-family: arial;
+  color: #494f55;
+  font-size: rem(14);
+  line-height: 1.3;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* ------------------------------------ */
+/* Make nerrow and custom color scrollbar */
+::-webkit-scrollbar {
+  /* scrollbar width */
+  width: rem(8);
+}
+
+::-webkit-scrollbar-track {
+  /* scrollable area background */
+  // background: #272822;
+  background: #e9ecef;
+}
+
+::-webkit-scrollbar-thumb {
+  /* Make scroller thumb or scroll controller background */
+  background: #646461;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  /* scroll controller hoverd background */
+  background: #a0a098;
+}
+
+::-webkit-scrollbar-thumb:active {
+  /* scroll controller active background */
+  background: #646461;
+}
+
+/* ------------------------------------ */
+
+/* ------------------------------------ */
+hr {
+  border: none;
+  margin: 10px 0;
+  border: 0;
+  border-top: 0.5px solid #ccc;
+} 
+/* ------------------------------------ */
+article,
+aside,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+nav,
+div,
+section {
+  display: block;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-top: 0;
+  margin-bottom: rem(5);
+}
+
+p {
+  color: #6c757d;
+  margin-bottom: rem(5);
+} 
+ol,
+ul,
+dl {
+  margin: 0;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+}
+img {
+  width: 100%;
+  height: auto;
+  border-style: none;
+}
+ol ol,
+ul ul,
+ol ul,
+ul ol {
+  margin-bottom: 0;
+}
+
+blockquote {
+  margin: 0 0 1rem;
+}
+
+a {
+  color: #4285f4;
+  text-decoration: none;
+}
+
+a:not([href]):not([tabindex]):hover,
+a:not([href]):not([tabindex]):focus {
+  color: inherit;
+  text-decoration: none;
+}
+label{
+  font-size: 1rem;
+  user-select: none;
+}
+button,
+input,
+optgroup,
+select,
+textarea { 
+  font-size: 100%;
+  line-height: 1.15;
+  margin: 0;
+}
+ 
+button,
+input {
+  overflow: visible;
+}
+
+button,
+select {
+  text-transform: none;
+}
+
+button,
+[type="button"],
+[type="reset"],
+[type="submit"] {
+  -webkit-appearance: button;
+}
+
+button {
+  border: none;
+  outline: none;
+  user-select: none;
+  cursor: pointer;
+
+  &:hover,
+  &:active,
+  &:focus {
+    border: none;
+    outline: none;
+  }
+}

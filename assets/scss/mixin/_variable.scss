@@ -1,0 +1,117 @@
+// :root{
+// 	/*color start*/
+// 	--default_color:#2BBBAD;
+// 	--primary_color:#4285F4;
+// 	--secondary_color:#AA66CC;
+// 	--success_color:#4ac375;
+// 	--info_color:#33B5E5;
+// 	--warning_color:#FFBB33;
+// 	--danger_color:#FF3547;
+
+
+// 	--light_green_color:#8BC34A;
+// 	--pink_color:#EC407A;
+// 	--purple_color:#8E24AA;
+// 	--deep_purple_color:#512DA8;
+// 	--dark_green_color:#388E3C;
+// 	--yellow_color:#FBC02D;
+// 	--grey_color:#78909C;
+// 	--brown_color:#795548;
+// 	--deep_orange_color:#FF7043;
+// 	--light_blue_color:#82B1FF;
+// 	--cyan_color:#00BCD4;
+// 	--orange_color:#ff7f50;
+// 	--aqua_color:#12cad1;
+// 	--blue_color:#3a84cd;
+// 	/*color end*/
+
+// 	/*gradient bg color start*/
+// 	--yellow_gradient_bg_color  : linear-gradient(40deg, #ffd86f, #fc6262);
+// 	--purple_gradient_bg_color  : linear-gradient(40deg, #ff6ec4, #7873f5);
+// 	--blue_gradient_bg_color    : linear-gradient(40deg, #45cafc, #303f9f);
+// 	--aqua_gradient_bg_color    : linear-gradient(40deg, #2096ff, #05ffa3);
+// 	--success_gradient_bg_color : linear-gradient(40deg, #43e97b, #38f9d7);
+// 	--danger_gradient_bg_color  : linear-gradient(40deg, #ff0844, #ffb199);
+// 	--warning_gradient_bg_color : linear-gradient(40deg, #f83600, #f9d423);
+// 	/*gradient bg color end*/
+
+// 	/*gradient bg color for hover start*/
+// 	--hover_yellow_gradient_bg_color  : linear-gradient(40deg, #ffd86f22, #fc626222);
+// 	--hover_purple_gradient_bg_color  : linear-gradient(40deg, #ff6ec422, #7873f522);
+// 	--hover_blue_gradient_bg_color    : linear-gradient(40deg, #45cafc22, #303f9f22);
+// 	--hover_aqua_gradient_bg_color    : linear-gradient(40deg, #2096ff22, #05ffa322);
+// 	--hover_success_gradient_bg_color : linear-gradient(40deg, #43e97b22, #38f9d722);
+// 	--hover_danger_gradient_bg_color  : linear-gradient(40deg, #ff084422, #ffb19922);
+// 	--hover_warning_gradient_bg_color : linear-gradient(40deg, #f8360022, #f9d42322);
+// 	/*gradient bg color for hover end*/
+// }
+
+$brand: ( // 7 brabd name
+	"default": #2bbbad, //
+	"primary": #1b66ca, //
+	"secondary": #1f4287, //
+	"success": #53A653, //
+	"info": #33b5e5, //
+	"warning": #ff9b05, //
+	"danger": #f5365c, //
+) !default;
+// social color
+$social: ( // 9 social name
+	"facebook": #3b5999, //
+	"youtube": #cd201f, //
+	"twitter": #55acee, //
+	"linkedin": #0077b5, //
+	"skype": #00aff0, //
+	"dropbox": #007ee5, //
+	"tumblr": #34465d, //
+	"pinterest": #bd081c, //
+	"snapchat": #ffb300 //
+) !default;
+// fave color
+
+$fave: ( // 15 fave name
+	"green": #8bc34a, //
+	"deep_green": #388e3c, //
+	"purple": #775ada, //
+	"deep_purple": #5a2baf, //
+	"indigo": #5469e0, //
+	"teal": #20c997, //
+	"cyan": #17a2b8, //
+	"orange": #ff9800, //
+	"deep_orange": #ff7043, //
+	"dark": #4d4e50, //
+	"black": #000000, //
+	"red": #ff1f5a, //
+	"pink": #e83e8c, //
+	// "pink": #f2a2e4, //
+	"blue": #007bff, //
+	"light_blue": #82b1ff, //
+	"yellow": #faee1c, //
+	"brown": #c03546, //
+	"grey": #78909C //
+) !default;
+$all_colors: (brand: $brand, social: $social, fave: $fave) !default;
+$general_colors: (brand: $brand, fave: $fave) !default;
+$gray: ( // 
+	"g0": #ffffff, //
+	"g1": #f8f9fa, //
+	"g2": #e9ecef, //
+	"g3": #dee2e6, //
+	"g4": #ced4da, //
+	"g5": #adb5bd, //
+	"g6": #6c757d, //
+	"g7": #495057, //
+	"g8": #343a40, //
+	"g9": #212529, //
+	"g10": #000000 //
+) !default;
+// all breakpoints
+$breakpoints: ( //
+	xs: 0, //
+	sm: 576px, //
+	md: 768px, //
+	lg: 992px, //
+	xl: 1200px //
+) !default; //
+ 
+$transition: all 0.3s ease-in-out;

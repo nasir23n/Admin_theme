@@ -1,0 +1,307 @@
+// /**
+// ***all button class list
+// nl 
+// nl.default
+// nl.primary
+// nl.secondary
+// nl.success
+// nl.info
+// nl.warning
+// nl.danger
+// nl.facebook
+// nl.youtube
+// nl.twitter
+// nl.linkedin
+// nl.skype
+// nl.dropbox
+// nl.tumblr
+// nl.pinterest
+// nl.snapchat
+// nl.green
+// nl.deep_green
+// nl.purple
+// nl.deep_purple
+// nl.indigo
+// nl.teal
+// nl.cyan
+// nl.orange
+// nl.deep_orange
+// nl.dark
+// nl.black
+// nl.red
+// nl.pink
+// nl.blue
+// nl.light_blue
+// nl.yellow
+// nl.brown
+// nl.grey
+
+// ***outline button 
+// nl.outline 
+// ***outline theme
+// nl.success .................etc */  
+.nl {
+   display: inline-block;
+   font-size: rem(16);
+   margin: rem(5) 0;
+   padding: rem(10) rem(20);
+   position: relative;
+   transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out, transform .01s ease-in-out;
+   background: make_color('g2');
+   font-weight: 400;
+   text-transform: capitalize !important;
+   white-space: normal !important;
+   word-wrap: break-word !important;
+   text-decoration: none !important;
+   color: make_color('g9');
+   text-align: center;
+	user-select: none;
+   vertical-align: middle;
+   box-shadow: $sdw1;
+   @include hover_focus() {
+      box-shadow: $sdw2;
+      // box-shadow: 0 4px 4px rgba(0, 0, 0, 0.16), 0 4px 10px rgba(0, 0, 0, 0.12);
+      background: make_color('g3');
+      text-decoration: none;
+   }
+   
+   &:active {
+      transform: scale(0.95);
+   }
+
+   &:last-child {
+      margin-right: 0px;
+   }
+
+   &.disabled,
+   &:disabled {
+      opacity: 0.65;
+
+      @include hover_focus_active {
+         box-shadow: none !important;
+      }
+
+      cursor: not-allowed !important;
+   }
+
+   &.block{
+      display: block; 
+      width: 100%;
+   }
+   &.icon{
+		& i {
+         font-size: 16px;
+         margin-right: 3px;
+      }
+	}
+   &.sm {
+      padding: 3px 5px;
+   }
+   // theme start 
+   @each $maps, $name in $all_colors { 
+      @each $key, $value in $name {
+         &.#{$key} {
+            background: $value;
+            color: make_color(g1); 
+            @include hover_focus_active {
+               & {
+                  box-shadow: 0 rem(2) rem(4) 0 transparentize($value, 0.7),0 rem(2) rem(10) 0 transparentize($value, 0.8) !important;
+                  // box-shadow: 0 4px 4px transparentize($value, 0.9), 0 4px 10px transparentize($value, 0.8);
+                  background: darken($value, 5);
+                  color: #ffffff;
+               }
+            }
+         }
+      }
+   }
+
+   &.yellow {
+      color: make_color('g8') !important;
+   }
+
+   // bordered start 
+   &.bordered {
+      border: 1px solid make_color('g9');
+      background: make_color('g1');
+      color: make_color('g9');
+
+      &:hover {
+         background: make_color('g7');
+         border-color: make_color('g7');
+         color: #ffffff;
+      }
+
+      @each $maps, $name in $all_colors { 
+         @each $key,  $value in $name {
+            &.#{$key} {
+               // background: mix(#fff, $value, 60%);
+               background: make_color('g0');
+               border-color: #{$value};
+               color: darken($value, 20);
+
+               &:hover {
+                  background: $value;
+                  color: make_color('g1');
+               }
+            }
+         }
+      }
+
+      &.yellow {
+         color: make_color('g8') !important;
+      } 
+   }
+   //  bordered end 
+   
+   // circle button 
+   &.circle,
+   &.social {
+      width: 40px;
+      height: 40px;
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      padding: 0;
+      border-radius: 50%;
+      text-align: center;
+      margin: 2px;
+
+      &.cx1 {
+         width: 45px;
+         height: 45px;
+         font-size: 16px;
+      }
+
+      &.cx2 {
+         width: 50px;
+         height: 50px;
+         font-size: 20px;
+      }
+
+      &.cx3 {
+         width: 55px;
+         height: 55px;
+         font-size: 24px;
+      }
+
+      &.cx4 {
+         width: 60px;
+         height: 60px;
+         font-size: 28px;
+      }
+
+      &.cx5 {
+         width: 65px;
+         height: 65px;
+         font-size: 32px;
+      }
+   }
+
+   &.x1 {
+      padding: 8px 17px;
+      font-size: 16px;
+   }
+
+   &.x2 {
+      padding: 9px 19px;
+      font-size: 18px;
+   }
+
+   &.x3 {
+      padding: 10px 21px;
+      font-size: 20px;
+   }
+
+   &.x4 {
+      padding: 11px 23px;
+      font-size: 22px;
+   }
+}
+
+// button group 
+.nl_group {
+   position: relative;
+   display: inline-flex;
+   flex-wrap: wrap;
+   margin: rem(5) 0;
+
+   & .nl {
+      margin: 0;
+      &:not(:first-child) {
+         border-left: rem(1) solid rgba(100,100,100,0.2) !important;
+      }
+   }
+   &.round {
+      border-radius: rem(6) !important;
+      & > .nl:first-child{
+         border-radius: rem(6) 0 0 rem(6) !important;
+      }
+      & > .nl:last-child{
+         border-radius: 0 rem(6) rem(6) 0 !important;
+      }
+   }
+   &.round_sk {
+      border-radius: rem(6) !important;
+      & > .nl:first-child{
+         border-radius: rem(30) 0 0 rem(6) !important;
+      }
+      & > .nl:last-child{
+         border-radius: 0 rem(6) rem(30) 0 !important;
+      }
+   }
+} 
+
+.nl_group_Y,
+.nl_group_verticale { 
+   display: inline-flex;
+   flex-wrap: wrap;
+   flex-direction: column;
+   &>.nl {
+      &:not(:first-child) {
+         border-top: rem(1) solid rgba(100,100,100,0.2) !important;
+      }
+   }
+    &.round{
+		border-radius: rem(10) !important;
+   		& > .nl:first-child{
+			border-radius: rem(10) rem(10) 0 0 !important;
+		}
+	    & > .nl:last-child{
+			border-radius: 0 0 rem(10) rem(10) !important;
+	    }
+    }
+}
+
+.loader{
+   position: relative;
+   padding-right: 25px !important;;
+   pointer-events: none;
+   &.grayscale {
+      filter: grayscale(1);
+   }
+   &::after{
+     content: '';
+     display: block;
+     width: 14px;
+     height: 14px;
+     border-radius: 50%;
+     border: 1px solid;
+     border-right-color: transparent !important;
+     position: absolute;
+     right: 5px;
+     top: calc(50% - 7px);
+     transform-origin: 50%, 50%; 
+     animation: loader 1s linear infinite;
+   }
+}
+ 
+ 
+@keyframes loader{
+   0%{
+     transform: rotateZ(0deg);
+   }
+   100%{
+     transform: rotateZ(360deg);
+   }
+}
+ 

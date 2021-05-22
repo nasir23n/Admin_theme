@@ -1,0 +1,29 @@
+.code_box {
+   background: #f1f1f1;
+   padding: 10px;
+   margin: 20px 0;
+   color: #ffffff;
+
+   & .body {
+      background: #ffffff;
+      overflow: auto;
+      padding: 4px;
+      color: #222222;
+   }
+
+   & .footer {
+      padding-top: 10px;
+   }
+
+   @each $maps,
+   $name in $all_colors {
+
+      @each $key,
+      $value in $name {
+         &.#{$key} {
+            background: $value;
+            border-left: 5px solid $value;
+         }
+      }
+   }
+}
