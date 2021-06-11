@@ -1,0 +1,215 @@
+$gradient: linear-gradient(45deg, #050c35, transparent);
+$aside_fave_bg: #d3dce8;
+$theme: #1b66ca;
+$light_grey: #F2F2F2;
+$light_grey_hover: #EAF3FF;
+
+.aside {
+    width: calc(var(--aside) + 1px);
+    height: 100vh;
+    // background: #00579e;
+    border-right: 1px solid #ddd;
+    background: #fff;
+    box-shadow: 5px 0 4px 0 rgba(230, 230, 230, 0.15);
+    // background: linear-gradient(90deg, #3345a9, #673AB7);
+    overflow-y: auto;
+    z-index: 100;
+    transition: $transition;
+    position: fixed;
+    padding-top: 70px; 
+    &.active {
+        margin-left: var(--aside_m);
+    }
+
+    @media (max-width: 768px) {
+        margin-left: var(--aside_m);
+
+        &.active {
+            margin-left: 0px;
+        }
+    }
+
+    & .aside_top {
+        width: var(--aside);
+        height: 70px;
+        border-bottom: 1px solid #dddddd;
+        position: fixed;
+        top: 0;
+        left: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: #ffffff;
+        padding: 10px;
+        font-size: 18px;
+        font-weight: 500;
+        color: #050505;
+        transition: $transition;
+
+        &:hover {
+            text-decoration: none;
+            background: #eeeeee;
+        }
+    }
+    & .aside_fixed_part {
+        width: var(--aside);
+        height: calc(100% - 70px);
+        position: fixed;
+        top: 70px;
+        overflow-y: auto;
+        &::-webkit-scrollbar {
+            width: 0px !important;
+        }
+    }
+    & .aside_profile {
+        padding: 20px 0;
+        padding-top: 30px;
+        & .profile_image {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            & img {
+                width: 70px;
+            }
+        }
+        & .info {
+            text-align: center;
+            padding-top: 15px;
+            & * {
+                margin: 0;
+                color: $theme;
+            }
+            & .name {
+                text-transform: uppercase;
+            }
+            & p {
+                font-size: 14px;
+            }
+        }
+    }
+
+    & .aside_links {
+        & li {
+            position: relative;
+            transition: $transition;
+            &.aside_drop {
+                & .aside_drop_btn {
+                    position: relative;
+                    &::before {
+                        display: block;
+                        content: '';
+                        width: 10px;
+                        height: 10px;
+                        background: transparent;
+                        border-right: 1px solid #333;
+                        border-bottom: 1px solid #333;
+                        z-index: 1;
+                        position: absolute;
+                        right: 15px;
+                        top: 50%;
+                        transform: translate(-50%, -50%) rotate(-45deg);
+                        pointer-events: none;
+                        transition: $transition;
+                    }
+                    & + ul {
+                        margin-left: 15px;
+                        background: #eeeeee;
+                        & li {
+                            & a {
+                                padding-left: 24px; 
+                                &::before {
+                                    content: '';
+                                    display: block;
+                                    width: 10px;
+                                    height: 2px;
+                                    background: #333;
+                                    position: absolute;
+                                    top: 50%;
+                                    left: 5px;
+                                    transform: translate(-50% -50%);
+                                    pointer-events: none;
+                                }
+                                &::after {
+                                    content: '';
+                                    display: block;
+                                    width: 8px;
+                                    height: 8px;
+                                    position: absolute;
+                                    top: 53%;
+                                    left: -20px;
+                                    opacity: 0;
+                                    transform: translate(-50%, -50%) rotate(-45deg);
+                                    border-right: 2px solid #333;
+                                    border-bottom: 2px solid #333;
+                                    transition: $transition;
+                                    pointer-events: none;
+                                }
+                                &:hover {
+                                    padding-left: 30px;
+                                    &::after {
+                                        left: calc(5px + 7px);
+                                        opacity: 1;
+                                    }
+                                }
+                                &.active {
+                                    background: #ddd;
+                                    &::after {
+                                        left: calc(5px + 7px);
+                                        opacity: 1;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    &.active { 
+                        background: #dddddd;
+                        &:before {
+                            transform: translate(-50%, -50%) rotate(45deg);
+                        }
+                        & + ul {
+                            & li {
+                                height: 43px !important;
+                            }
+                        }
+                    }
+                }
+                & ul {
+                    background: rgba(230, 230, 230, 0.15);
+                    & li {
+                        position: relative;
+                        height: 0;
+                        overflow: hidden;
+                    }
+                }
+            }
+            & a {
+                display: flex;
+                align-items: center;
+                padding: 12px 5px 12px 15px; 
+                border-bottom: 1px solid rgba(28, 103, 202, 0.22);
+                position: relative;
+                cursor: pointer;
+                color: #050505;
+                transition: $transition;
+                user-select: none;
+                & .aside_icon {
+                    width: 25px;
+                    margin-right: 8px;
+                }
+                & .r_count {
+                    margin-left: auto;
+                }
+                &:hover { 
+                    background: #eeeeee;
+                    padding-left: 20px;
+                }
+                &.active { 
+                    background: #dddddd;
+                    padding-left: 20px;
+                    border-left: 3px solid $theme;
+                }
+            }
+        }
+    }
+}

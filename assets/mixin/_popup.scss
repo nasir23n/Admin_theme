@@ -1,0 +1,64 @@
+// <div class="popup_wrap">
+//     <div class="popup_container">
+//         <div class="popup_header">
+//             <strong class="header_txt">popup header</strong>
+//             <button class="popup_close">&#9587;</button>
+//         </div>
+//         <div class="popup_body">
+//             I will make it.
+//         </div>
+//         <div class="popup_footer">
+//             some
+//         </div>
+//     </div>
+// </div>
+.popup_wrap {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 10000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(20,20,20,0.5);
+    padding: 10px;
+    & .popup_container {
+        background: #fff;
+        width: auto;
+        @media (min-width: 768px) {
+            min-width: 500px; 
+        }
+        @media (max-width: 768px) {
+            width: 100%;
+        }
+        & .popup_header {
+            display: flex;
+            align-items: center;
+            background: #f8f8f8;
+            border-bottom: 1px solid #d1d1d1;
+            cursor: move;
+            & .header_txt {
+                flex-grow: 1;
+                padding-left: 10px;
+            }
+            & .popup_close {
+                padding: 10px;
+                &:hover {
+                    color: #D81B60;
+                }
+            }
+            // justify-content: space-between;
+        }
+        & .popup_body {
+            padding: 10px;
+        }
+        & .popup_footer {
+            padding: 10px;
+            display: flex;
+            background: #f8f8f8;
+            border-top: 1px solid #d1d1d1;
+        }
+    }
+}

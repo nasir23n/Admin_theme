@@ -58,6 +58,7 @@
 	user-select: none;
    vertical-align: middle;
    box-shadow: $sdw1;
+   border-radius: 6px;
    @include hover_focus() {
       box-shadow: $sdw2;
       // box-shadow: 0 4px 4px rgba(0, 0, 0, 0.16), 0 4px 10px rgba(0, 0, 0, 0.12);

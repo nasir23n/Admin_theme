@@ -1,0 +1,42 @@
+
+.flex {
+    display: flex;
+}
+.align_center {
+    align-items: center;
+}
+
+.justify_center {
+    justify-content: center;
+}
+
+.align_justify_center {
+    align-items: center;
+    justify-content: center;
+}
+
+.flex_center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.m0 {
+    margin: 0 !important;
+}
+
+.ml_0 {
+    margin-left: 0 !important;
+}
+.ml_auto {
+    margin-left: auto !important;
+}
+
+
+.p0 {
+    padding: 0 !important;
+}
+.pl_0 {
+    padding-left: 0 !important;
+}
+

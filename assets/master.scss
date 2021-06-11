@@ -1,0 +1,333 @@
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #f0f0f0;
+    font-family: "Nunito Sans";
+}
+
+$transition: all 0.2s ease-in-out;
+
+:root {
+    --aside: 250px;
+    --aside_m: -250px;
+    --dark: #39444d;
+    --gray: #f5f6f7;
+    --fave: #3345a9;
+}
+
+:root {
+    --bs-blue: #0d6efd;
+    --bs-indigo: #6610f2;
+    --bs-purple: #6f42c1;
+    --bs-pink: #d63384;
+    --bs-red: #dc3545;
+    --bs-orange: #fd7e14;
+    --bs-yellow: #ffc107;
+    --bs-green: #198754;
+    --bs-teal: #20c997;
+    --bs-cyan: #0dcaf0;
+    --bs-white: #fff;
+    --bs-gray: #6c757d;
+    --bs-gray-dark: #343a40;
+    --bs-primary: #0d6efd;
+    --bs-secondary: #6c757d;
+    --bs-success: #198754;
+    --bs-info: #0dcaf0;
+    --bs-warning: #ffc107;
+    --bs-danger: #dc3545;
+    --bs-light: #f8f9fa;
+    --bs-dark: #212529;
+    --bs-font-sans-serif: system-ui, -apple-system, "Segoe UI", Roboto,
+        "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif,
+        "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
+        "Noto Color Emoji";
+    --bs-font-monospace: SFMono-Regular, Menlo, Monaco, Consolas,
+        "Liberation Mono", "Courier New", monospace;
+    --bs-gradient: linear-gradient(180deg,
+            rgba(255, 255, 255, 0.15),
+            rgba(255, 255, 255, 0));
+}
+
+button {
+    outline: none;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+
+    &:focus {
+        outline: none;
+    }
+}
+
+a {
+    text-decoration: none;
+}
+
+ul {
+    padding: 0;
+    list-style: none;
+}
+
+img {
+    display: block;
+    width: 100%;
+}
+
+/* Make nerrow and custom color scrollbar */
+::-webkit-scrollbar {
+    /* scrollbar width */
+    width: 8px;
+    height: 0px;
+}
+
+::-webkit-scrollbar-track {
+    /* scrollable area background */
+    background: #272822;
+}
+
+::-webkit-scrollbar-thumb {
+    /* Make scroller thumb or scroll controller background */
+    background: #646461;
+    border-radius: 50px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    /* scroll controller hoverd background */
+    background: #a0a098;
+}
+
+::-webkit-scrollbar-thumb:active {
+    /* scroll controller active background */
+    background: #646461;
+}
+
+// /* ------------------------------------ */
+
+/////////////////////////////////////////////
+/////////////////////////////////////////////
+/////////////////////////////////////////////
+/////////////////////////////////////////////
+/////////////////////////////////////////////
+
+.main_wrap {
+    display: flex;
+    background: var(--gray);
+    min-width: 100%;
+    min-height: 100vh;
+}
+
+.heading {
+    width: 100%;
+    margin-bottom: 20px;
+    font-weight: bold;
+    text-shadow: 1px 2px 3px rgba(0, 0, 0, 0.2);
+}
+
+.bg-fave {
+    background: #3345a9;
+    color: #ffffff;
+
+    &.btn:hover {
+        color: #ffffff !important;
+    }
+}
+
+.bg-fave-gradient {
+    background: linear-gradient(90deg, #3345a9, #673ab7);
+    color: #ffffff;
+
+    &.btn:hover {
+        color: #ffffff !important;
+    }
+}
+
+.check {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 15px;
+    height: 15px;
+    background: var(--success);
+    border-radius: 50%;
+}
+
+.check.danger {
+    background: var(--danger);
+}
+
+.check::before {
+    content: "";
+    display: block;
+    width: 8px;
+    height: 4px;
+    border-left: 1px solid #ffffff;
+    border-bottom: 1px solid #ffffff;
+    transform: rotate(-45deg);
+    margin-top: -1px;
+}
+
+%clear {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+// nl css some
+@import "mixin/variable";
+@import "mixin/function";
+@import "mixin/mixin";
+@import "mixin/extend";
+@import "mixin/greed";
+@import "mixin/panel";
+@import "mixin/form";
+@import "mixin/button";
+@import "mixin/alert";
+@import "mixin/table";
+@import "mixin/preloder";
+@import "mixin/dropdown";
+@import "mixin/bandage";
+@import "mixin/popup";
+@import "mixin/util";
+
+@import "components/aside";
+@import "components/content";
+@import "components/top_nav";
+@import "components/nl_modal";
+
+/*panel nav start*/
+.panel_nav {
+    width: 100%;
+    min-height: 35px;
+    margin-bottom: 20px;
+
+    & .panel_nav_grup {
+        // background: linear-gradient(80deg, $pink, darken($pink, 15));
+        background: var(--fave);
+        box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.12);
+        display: flex;
+        flex-wrap: wrap;
+        height: 35px;
+        float: left;
+        padding: 0 10px;
+        border-radius: 20px;
+
+        & li a {
+            height: 35px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #ffffff;
+            padding: 0 10px;
+            transition: $transition;
+
+            &:hover,
+            &:focus,
+            &.active {
+                background: #fcfcfc;
+                color: var(--fave);
+            }
+        }
+
+        & .nl_link_dropdown {
+            a {
+                color: #333;
+                justify-content: left;
+                padding: 20px 10px;
+
+                &:hover {
+                    padding-left: 15px;
+                }
+            }
+        }
+    }
+}
+
+/*panel nav end*/
+
+.nl_card {
+    display: block;
+    margin-bottom: 25px;
+    box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.08), 0 2px 4px 0 rgba(0, 0, 0, 0.12);
+    background: #ffffff;
+}
+
+.nl_card .header * {
+    margin: 0;
+}
+
+.nl_card .header {
+    padding: 16px;
+    border-bottom: 1px solid #dddddd;
+}
+
+.nl_card .body {
+    padding: 16px;
+}
+
+.student_list {
+    & .item {
+        display: flex;
+        align-items: center;
+        padding: 10px;
+        border-bottom: 1px solid #ccc;
+
+        & .profile_img {
+            width: 80px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            & img {
+                width: 60px;
+                height: 60px;
+                border-radius: 50%;
+                object-fit: cover;
+                box-shadow: 0 3px 8px 0 rgba(0, 0, 0, 0.2);
+            }
+        }
+
+        & .name {
+            & * {
+                margin: 0;
+            }
+
+            & h3 {
+                font-size: 22px;
+            }
+
+            & .keyw {
+                border: 1px solid transparentize(#0d6efd, 0.5);
+                padding: 2px 8px;
+                margin-top: 3px;
+                line-height: 1.3;
+                display: inline-block;
+                border-radius: 3px;
+                background: transparentize(#0d6efd, 0.8);
+            }
+        }
+    }
+}
+
+/////////////////////////
+/////////////////////////
+/////////////////////////
+/////////////////////////
+/////////////////////////
+/////////////////////////
+/////////////////////////
+/////////////////////////
+/////////////////////////
+/////////////////////////
+/////////////////////////
+/////////////////////////
+/////////////////////////
+/////////////////////////
+/////////////////////////
+/////////////////////////
+/////////////////////////

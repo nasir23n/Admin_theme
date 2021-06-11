@@ -1,22 +1,24 @@
 /* Panel design start */
 
-$panel_border: #e6e6e6;
+$panel_border: #dedede;
 
 .panel {
   background: #fff;
-  min-height: rem(10);
-  // box-shadow: 0 rem(2) rem(10) rgba(0, 0, 0, 0.2);
+  min-height: 50px;
+// box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.08), 0 2px 4px 0 rgba(0, 0, 0, 0.12);
   box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.08), 0 2px 4px 0 rgba(0, 0, 0, 0.12);
   position: relative;
-  margin-bottom: rem(16);
-  margin-top: rem(5);
+  margin-bottom: 24px;
+  display: flex;
+  flex-direction: column; 
 
   &>.header {
-    padding: rem(15);
-    border-bottom: rem(1) solid $panel_border; 
-
+    padding: 16px 20px;
+    border-bottom: 1px solid $panel_border; 
+    display: flex;
+    align-items: center;
     &>* {
-      margin: 0 !important;
+      margin: 0;
     }
 
     &:after,
