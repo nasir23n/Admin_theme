@@ -1,7 +1,4 @@
 /* Panel design start */
-
-$panel_border: #dedede;
-
 .panel {
   background: #fff;
   min-height: 50px;
@@ -14,7 +11,7 @@ $panel_border: #dedede;
 
   &>.header {
     padding: 16px 20px;
-    border-bottom: 1px solid $panel_border; 
+    border-bottom: 1px solid #dedede; 
     display: flex;
     align-items: center;
     &>* {
@@ -23,24 +20,28 @@ $panel_border: #dedede;
 
     &:after,
     &:before {
-      @extend %clear;
+      content: '';
+      display: block;
+      clear: both;
     }
   }
 
   &>.body {
-    font-size: rem(15);
+    font-size: 16px;
     color: #555;
-    padding: rem(15);
+    padding: 15px;
   }
 
   &>.footer {
-    border-top: rem(1) solid $panel_border;
+    border-top: 1px solid #dedede;
     width: 100%;
     padding: rem(15);
 
     &:after,
     &:before {
-      @extend %clear;
+      content: '';
+      display: block;
+      clear: both;
     }
   }
 }

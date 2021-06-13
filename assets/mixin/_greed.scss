@@ -10,21 +10,21 @@
 // */
 
 // /*-------------row wraper start---------------*/
-%box_padding {
+
+@mixin box_padding() {
 	padding-left: rem(15);
 	padding-right: rem(15);
 	min-height: rem(10);
 }
-
 .container_fluid {
-	@extend %box_padding;
+	@include box_padding();
 	width: 100%;
 	position: relative;
 }
 
 .container_fluid_master {
 	width: 90%;
-	@extend %box_padding;
+	@include box_padding();
 	margin-left: auto;
 	margin-right: auto;
 
@@ -43,7 +43,7 @@
 
 .container {
 	width: 100%;
-	@extend %box_padding;
+	@include box_padding();
 	margin-right: auto;
 	margin-left: auto;
 }
@@ -80,11 +80,15 @@
 
 .container::before,
 .container::after {
-	@extend %clear;
+	content: '';
+	display: block;
+	clear: both; 
 }
 
 .clear { 
-	@extend %clear;
+	content: '';
+	display: block;
+	clear: both; 
 }
 
 .jumbotron {
@@ -105,38 +109,34 @@
 //main grid start hear
 
 /* gride start */
-
-%make_col {
-	@extend %box_padding;
-	position: relative;
-	display: block;
-	width: 100%;
-}
+ 
 
 [class*="col_"],
 [class*="col_sm_"],
 [class*="col_md_"],
 [class*="col_lg_"],
 [class*="col_xl_"] {
-	@extend %box_padding;
+	@include box_padding();
 	position: relative;
 	width: 100%;
 } 
 
-[class*="col_"] ::after,
-[class*="col_"]::before,
+// [class*="col_"] ::after,
+// [class*="col_"]::before,
 
-[class*="col_md_"]::after,
-[class*="col_md_"]::before,
+// [class*="col_md_"]::after,
+// [class*="col_md_"]::before,
 
-[class*="col_sm_"]::after,
-[class*="col_sm_"]::before,
+// [class*="col_sm_"]::after,
+// [class*="col_sm_"]::before,
 
-[class*="col_xs_"]::after,
-[class*="col_xs_"]::before {
-	@extend %clear;
-	overflow: hidden;
-}
+// [class*="col_xs_"]::after,
+// [class*="col_xs_"]::before {
+// 	content: '';
+// 	display: block;
+// 	clear: both; 
+// 	overflow: hidden;
+// }
 // column start 
 @for $i from 1 through 12 {
 	.col_#{$i} {
@@ -156,42 +156,42 @@ $break_value in $breakpoints {
 }
 // column end
 
-// order start 
-@for $i from 1 through 12 {
-	.order_#{$i} {
-		order: $i;
-	}
-}
+// // order start 
+// @for $i from 1 through 12 {
+// 	.order_#{$i} {
+// 		order: $i;
+// 	}
+// }
 
-@each $break_name,
-$break_value in $breakpoints {
-	@media (min-width: $break_value) {
-		@for $i from 1 through 12 {
-			.order_#{$break_name}_#{$i} {
-				order: $i;
-			}
-		}
-	}
-}
-// order end 
+// @each $break_name,
+// $break_value in $breakpoints {
+// 	@media (min-width: $break_value) {
+// 		@for $i from 1 through 12 {
+// 			.order_#{$break_name}_#{$i} {
+// 				order: $i;
+// 			}
+// 		}
+// 	}
+// }
+// // order end 
 
-// offset start 
-@for $i from 1 through 12 {
-	.offset_#{$i} {
-		margin-left: 8.33333333% * $i;
-	}
-}
+// // offset start 
+// @for $i from 1 through 12 {
+// 	.offset_#{$i} {
+// 		margin-left: 8.33333333% * $i;
+// 	}
+// }
 
-@each $break_name,
-$break_value in $breakpoints {
-	@media (min-width: $break_value) {
-		@for $i from 1 through 12 {
-			.offset_#{$break_name}_#{$i} {
-				margin-left: 8.33333333% * $i;
-			}
-		}
-	}
-}
+// @each $break_name,
+// $break_value in $breakpoints {
+// 	@media (min-width: $break_value) {
+// 		@for $i from 1 through 12 {
+// 			.offset_#{$break_name}_#{$i} {
+// 				margin-left: 8.33333333% * $i;
+// 			}
+// 		}
+// 	}
+// }
 // offset end
 
 // /* Grid end 

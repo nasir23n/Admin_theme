@@ -70,41 +70,36 @@ $social: ( // 9 social name
 // fave color
 
 $fave: ( // 15 fave name
-	"green": #8bc34a, //
-	"deep_green": #388e3c, //
-	"purple": #775ada, //
-	"deep_purple": #5a2baf, //
+	"green": #17975b, // 
+	"purple": #6c4fce, // 
 	"indigo": #5469e0, //
-	"teal": #20c997, //
+	"teal": #2ABBA7, //
 	"cyan": #17a2b8, //
 	"orange": #ff9800, //
-	"deep_orange": #ff7043, //
-	"dark": #4d4e50, //
-	"black": #000000, //
+	"deep_orange": #ff7043, // 
 	"red": #ff1f5a, //
-	"pink": #e83e8c, //
-	// "pink": #f2a2e4, //
-	"blue": #007bff, //
+	"pink": #e83e8c, // 
+	"blue": #1a76ee, //
 	"light_blue": #82b1ff, //
 	"yellow": #faee1c, //
 	"brown": #c03546, //
-	"grey": #78909C //
+	"tomato": #f16d49,//
 ) !default;
 $all_colors: (brand: $brand, social: $social, fave: $fave) !default;
 $general_colors: (brand: $brand, fave: $fave) !default;
 $gray: ( // 
-	"g0": #ffffff, //
-	"g1": #f8f9fa, //
-	"g2": #e9ecef, //
-	"g3": #dee2e6, //
-	"g4": #ced4da, //
-	"g5": #adb5bd, //
-	"g6": #6c757d, //
-	"g7": #495057, //
-	"g8": #343a40, //
-	"g9": #212529, //
-	"g10": #000000 //
-) !default;
+	"g0": #F5F6F7, //
+	"g1": #F2F3F5, //
+	"g2": #EBEDF0, //
+	"g3": #DADDE1, //
+	"g4": #CCD0D5, //
+	"g5": #BEC3C9, //
+	"g6": #8D949E, //
+	"g7": #606770, //
+	"g8": #444950, //
+	"g9": #303338, //
+	"g10": #1C1E21 //
+) !default; 
 // all breakpoints
 $breakpoints: ( //
 	xs: 0, //
@@ -139,7 +134,19 @@ $border: ( //
 	'9': rem(9), //
 	'10': rem(10) //
 ) !default;
-
+$util: (
+	'0': 0, //
+	'1': 5, //
+	'2': 10, //
+	'3': 15, //
+	'4': 20, //
+	'5': 25, //
+	'6': 30, //
+	'7': 35, //
+	'8': 40, //
+	'9': 45, //
+	'10': 50, //
+) !default;
 $size_mp: ( //
 	'0': rem(0), //
 	'1': rem(4), //
@@ -173,3 +180,5 @@ $shadow_1: 0 4px 6px 0 rgba(85, 85, 85, 0.08),
 0px 1px 11px 0px rgba(0, 0, 0, 0.07);
 $shadow_2: 0px 20px 20px rgba(126, 142, 177, 0.12);
 $shadow_3: 0px 5px 20px 0 rgba(0, 0, 0, 0.1);
+
+ 

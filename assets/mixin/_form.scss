@@ -1,6 +1,5 @@
-.form,
-form {
-	margin: rem(24) 0;
+.form {
+	margin: 20px 0;
 }
 
 .form_row {
@@ -9,14 +8,13 @@ form {
 	flex-wrap: wrap;
 }
 
-.form_row>.col,
-.form_row>.cmd {
+.form_row>.col {
 	padding-right: 5px;
 	padding-left: 5px;
 }
 
 .form_group {
-	margin-bottom: rem(10);
+	margin-bottom: 10px;
 	display: block;
 	width: 100%;
 
@@ -43,38 +41,16 @@ select {
 	cursor: pointer;
 } 
 
-textarea.form_control,
-input.form_control,
-select.form_control,
-input[type="week"].form_control,
-input[type="time"].form_control,
-input[type="tel"].form_control,
-input[type="search"].form_control,
-input[type="range"].form_control,
-input[type="month"].form_control,
-input[type="file"].form_control,
-input[type="datetime-local"].form_control,
-input[type="date"].form_control,
-input[type="url"].form_control,
-input[type="password"].form_control,
-input[type="email"].form_control,
-input[type="number"].form_control,
-input[type="text"].form_control {
-	display: flex;
-	border-radius: 0;
-	font-size: rem(18);
-	font-weight: normal;
-	padding: rem(10);
-	border: rem(1) solid make_color('g5'); 
+.form_control {
+	font-size: rem(16);
+	padding: 10px;
+	border: 1px solid make_color('g5');
 	background: #fff;
-	color: #222222;
-	height: auto;
+	color: make_color('g9');
 	width: 100%;
 	transition: box-shadow 0.3s ease-in-out, border 0.3s ease-in-out;
-	margin: rem(5) 0;
-	align-items: center; 
-	// line-height: rem(40);
-	// border-radius: 4px;
+	margin: 5px 0;
+	border-radius: 4px;
 }
 input[type="file"].form_control {
 	font-size: 12px; 
@@ -82,16 +58,14 @@ input[type="file"].form_control {
 .form_control {
 
 	@include hover_focus() {
-		// border-color: make_color('g6');
 		border-color: #1b67ca !important;
-		// box-shadow: 0 rem(1) rem(5) rgba(0, 0, 0, .2); 
 	}
-	// &:focus {
-		// box-shadow: 0 0 0 3px rgba(27, 102, 202, 0.41); 
-	// }
+	&:focus {
+		box-shadow: 0 0 0 3px rgba(27, 103, 202, 0.3); 
+	}
 
 	&::placeholder {
-		color: make_color('g5');
+		color: make_color('g6');
 	}
 
 	// theme 
@@ -99,14 +73,16 @@ input[type="file"].form_control {
 		&.#{$key} {
 			border: rem(1) solid $value !important;
 
-			@include hover_focus() {
-				// box-shadow: 0 rem(1) rem(5) transparentize($value, 0.7);
+			@include hover_focus() { 
 				border-color: $value;
 			}
+			&:focus {
+				box-shadow: 0 0 0 3px transparentize($value, 0.7); 
+			}
 
-			// &::placeholder {
-			// 	color: transparentize($value, 0.5);
-			// }
+			&::placeholder {
+				color: transparentize($value, 0.5);
+			}
 		}
 	}
 }

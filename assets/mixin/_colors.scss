@@ -8,32 +8,32 @@
 }
 
 /* background class */
-@each $maps, $name in $all_colors { 
+@each $maps, $name in $general_colors { 
    @each $key, $value in $name {
-      .bg_#{$key} {
-         background: #{$value} !important;
+      .bg\:#{$key} {
+         background: #{$value};
       }
    }
 }
 
-.bg_white {
-   background: white !important;
+.bg\:white {
+   background: white;
 }
 
-.bg_transparent,
+.bg\:transparent,
 .bg_none {
    background: transparent !important;
 }
 
 /* color class */
-@each $maps, $name in $all_colors { 
+@each $maps, $name in $general_colors { 
    @each $key, $value in $name {
-      .color_#{$key} {
-         color: #{$value} !important;
+      .color\:#{$key} {
+         color: #{$value};
       }
    }
 }
 
-.color_white {
-   color: white !important;
+.color\:white {
+   color: white;
 }
