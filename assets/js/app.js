@@ -18,6 +18,16 @@ $('#nav_toggle').click(function () {
     $('#aside').toggleClass('active');
 });
 
+$('.alert .close').click(function () {
+    $(this).parent().toggleClass('animated fade');
+	$(this).parent().on('animationend', () => {
+		$(this).parent().remove();
+	});
+    // $('.top_nav').toggleClass('active');
+    // $('.content_wrap').toggleClass('active');
+    // $('#aside').toggleClass('active');
+});
+
 
 
 /* dropdown start-----------------*/
@@ -55,5 +65,5 @@ window.addEventListener('click', function(event){
 
 // Waves effect
 	
-Waves.attach('.wev_effect');
-Waves.init();
+// Waves.attach('.wev_effect');
+// Waves.init();

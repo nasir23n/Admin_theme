@@ -48,7 +48,7 @@ $light_grey_hover: #EAF3FF;
 
         &:hover {
             text-decoration: none;
-            background: #eeeeee;
+            background: var(--light_gray);
         }
     }
     & .aside_fixed_part {
@@ -78,7 +78,7 @@ $light_grey_hover: #EAF3FF;
             padding-top: 15px;
             & * {
                 margin: 0;
-                color: $theme;
+                color: var(--fave);
             }
             & .name {
                 text-transform: uppercase;
@@ -93,6 +93,7 @@ $light_grey_hover: #EAF3FF;
         & li {
             position: relative;
             transition: $transition;
+            padding: 0 7px;
             &.aside_drop {
                 & .aside_drop_btn {
                     position: relative;
@@ -114,7 +115,7 @@ $light_grey_hover: #EAF3FF;
                     }
                     & + ul {
                         margin-left: 15px;
-                        background: #eeeeee;
+                        // background: #eeeeee;
                         & li {
                             & a {
                                 padding-left: 24px; 
@@ -163,9 +164,10 @@ $light_grey_hover: #EAF3FF;
                         }
                     }
                     &.active { 
-                        background: #dddddd;
+                        background: var(--light_gray_active);
                         &:before {
                             transform: translate(-50%, -50%) rotate(45deg);
+                            top: calc(50% - 2px);
                         }
                         & + ul {
                             & li {
@@ -186,13 +188,14 @@ $light_grey_hover: #EAF3FF;
             & a {
                 display: flex;
                 align-items: center;
-                padding: 12px 5px 12px 15px; 
-                border-bottom: 1px solid rgba(28, 103, 202, 0.22);
+                padding: 10px; 
+                // border-bottom: 1px solid rgba(28, 103, 202, 0.22);
                 position: relative;
                 cursor: pointer;
                 color: #050505;
                 transition: $transition;
                 user-select: none;
+                border-radius: 5px;
                 & .aside_icon {
                     width: 25px;
                     margin-right: 8px;
@@ -201,13 +204,13 @@ $light_grey_hover: #EAF3FF;
                     margin-left: auto;
                 }
                 &:hover { 
-                    background: #eeeeee;
-                    padding-left: 20px;
+                    background: var(--light_gray);
+                    padding-left: 10px;
                 }
                 &.active { 
-                    background: #dddddd;
-                    padding-left: 20px;
-                    border-left: 3px solid $theme;
+                    background: var(--light_gray_active);
+                    padding-left: 10px;
+                    // border-left: 3px solid $theme;
                 }
             }
         }

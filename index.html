@@ -7,35 +7,20 @@
     <title>Admin panel</title>
     <link rel="stylesheet" href="common/font-awesome/css/all.css">
     <link rel="stylesheet" href="assets/master.css">
-    <link rel="stylesheet" href="common/css/waves.min.css">
+    
     <script src="common/js/jquery-3.4.1.min.js"></script>
-    <script src="common/js/waves.min.js"></script>
-    <script src="assets/js/nl.js"></script>
-    <!-- Fonts -->
-    <!-- <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:300,400,600,700" rel="stylesheet"> -->
-    <script>
-        var url = (location.origin == "http://localhost") ? location.origin + "/" + location.pathname.split("/")[1] +
-            "/" : location.origin + "/";
-        let goTop = function() {
-            $("html, body").animate({ scrollTop: 0 }, 200);
-        }
-    </script>
+
 </head>
 <body>
-    <style>
-        @font-face {
-            font-family: 'NunitoSans-Regular';
-            src: url('common/font/NunitoSans-Regular.ttf');
-        }
-        body {
-            font-family: 'NunitoSans-Regular';
-        }
-    </style> 
+    <!-- Everything wrapped by .main_wrap -->
     <div class="main_wrap">
+        <!-- aside nav is relative to its inner content and 100vh height -->
         <div class="aside" id="aside">
-            <a href="index.html" class="aside_top wev_effect">
+            <!-- .aside_top is fixed to top of the sidebar -->
+            <a href="index.html" class="aside_top">
                 ADMIN PANEL
             </a>
+
             <div class="aside_fixed_part">
                 <div class="aside_profile">
                     <div class="profile_image">
@@ -48,57 +33,58 @@
                 </div>
                 <ul class="aside_links">
                     <li>
-                        <a class="wev_effect  active " href="index.html">
+                        <a class="active" href="index.html">
                             <i class="aside_icon fa fa-tachometer-alt"></i>
                             Deshboard
                         </a>
                     </li>
                     <li class="aside_drop">
-                        <a href="javascript:void(0)" class="aside_drop_btn wev_effect ">
+                        <a href="javascript:void(0)" class="aside_drop_btn">
                             <i class="aside_icon fab  fa-canadian-maple-leaf"></i>
                             Catagory
                         </a>
                         <ul>
-                            <li><a class="wev_effect " href="#">Add Catagory</a></li>
-                            <li><a class="wev_effect " href="#">All Catagory</a></li>
+                            <li><a href="#">Add Catagory</a></li>
+                            <li><a href="#">All Catagory</a></li>
                             <li>
-                                <a class="wev_effect " href="#">
+                                <a href="#">
                                     Trashed Catagory
                                     <span class="badges danger ml_auto" id="aside_trashed">
-                                        1                                    </span>
+                                        1
+                                    </span>
                                 </a>
                             </li>
                         </ul>
                     </li>
                     <li class="aside_drop">
-                        <a href="javascript:void(0)" class="aside_drop_btn wev_effect ">
+                        <a href="javascript:void(0)" class="aside_drop_btn">
                             <i class="far aside_icon fa-newspaper"></i>
                             News
                         </a>
                         <ul>
-                            <li><a class="wev_effect " href="#">Add News</a></li>
-                            <li><a class="wev_effect " href="#">All News</a></li> 
-                            <li><a class="wev_effect " href="#">Drafed News</a></li>
+                            <li><a href="#">Add News</a></li>
+                            <li><a href="#">All News</a></li> 
+                            <li><a href="#">Drafed News</a></li>
                         </ul>
                     </li>
                     <li class="aside_drop">
-                        <a href="javascript:void(0)" class="aside_drop_btn wev_effect ">
+                        <a href="javascript:void(0)" class="aside_drop_btn">
                             <i class="fas aside_icon  fa-images"></i>
                             Media
                         </a>
                         <ul>
-                            <li><a class="wev_effect " href="#">Add Media Item</a></li>
-                            <li><a class="wev_effect " href="#">All Media Item</a></li> 
-                            <li><a class="wev_effect " href="#">Trashed Media Item</a></li>
+                            <li><a href="#">Add Media Item</a></li>
+                            <li><a href="#">All Media Item</a></li> 
+                            <li><a href="#">Trashed Media Item</a></li>
                         </ul>
                     </li>
-                    <li><a class="wev_effect" href="javascript:void(0)">More Class</a></li>
+                    <li><a href="javascript:void(0)">More Class</a></li>
                 </ul>
             </div>
         </div>
         <div class="content_wrap">
             <div class="top_nav">
-                <button class="top_nav_toggle wev_effect" id="nav_toggle">
+                <button class="top_nav_toggle" id="nav_toggle">
                     <span></span>
                     <span></span>
                     <span></span>
@@ -106,7 +92,7 @@
                 <a href="index.html" class="hidden_home">ADMIN PANEL</a>
                 <div class="setting_drop">
                     <div class="drop_container">
-                        <button class="drop wev_effect"><i class="fa fa-cog"></i></button>
+                        <button class="drop"><i class="fa fa-cog"></i></button>
                         <ul class="drop_element drop_right">
 							<li><a href="javascript:void(0)"><i class="fa fa-cogs"></i>Vew profile</a></li>
 							<li><a href=""><i class="fa fa-users"></i>All Admin</a></li>
@@ -134,6 +120,11 @@
                                 <input type="text" class="form_control danger" placeholder="Some">
                             </div>
                         </div>
+
+                        <div class="alert danger">
+                            some
+                            <button class="close">&times;</button>
+                        </div>
                     </div>
                     <div class="footer">Footer</div>
                 </div>
@@ -141,7 +132,7 @@
             </div>
         </div>
     </div>
- 
+    
     <script src="assets/js/app.js"></script>
     </body>
 </html>

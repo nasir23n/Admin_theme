@@ -30,7 +30,7 @@
         opacity: 0;
         &:hover {
             text-decoration: none;
-            background: #eeeeee;
+            background: var(--light_gray);
         }
     }
 
@@ -48,11 +48,11 @@
 
         &:hover,
         &.active {
-            background: #eaeaea;
+            background: var(--light_gray);
         }
 
         &:active {
-            background: #dae4ee;
+            background: var(--light_gray_active);
         }
 
         & span {
@@ -95,7 +95,7 @@
         }
 
         @media (max-width: 768px) {
-            background: #eaeaea;
+            background: var(--light_gray);
 
             & span {
                 &:nth-child(1) {

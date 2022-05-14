@@ -16,6 +16,7 @@
 	padding-right: rem(15);
 	min-height: rem(10);
 }
+
 .container_fluid {
 	@include box_padding();
 	width: 100%;
@@ -34,8 +35,8 @@
 }
 
 .row {
-	margin-left: rem(-15);
-	margin-right: rem(-15);
+	margin-left: -15px;
+	margin-right: -15px;
 	position: relative; 
 	display: flex; 
 	flex-wrap: wrap; 
@@ -50,25 +51,25 @@
 
 @include sm {
 	.container {
-		max-width: rem(540);
+		max-width: 540px;
 	}
 }
 
 @include md {
 	.container {
-		max-width: rem(720);
+		max-width: 720px;
 	}
 }
 
 @include lg {
 	.container {
-		max-width: rem(970);
+		max-width: 970px;
 	}
 }
 
 @include xl {
 	.container {
-		max-width: rem(1150);
+		max-width: 1150px;
 	}
 }
 
@@ -92,15 +93,15 @@
 }
 
 .jumbotron {
-	padding: rem(32) rem(16);
-	margin-bottom: rem(24);
+	padding: 32px 16px;
+	margin-bottom: 24px;
 	background: #e7ecf1;
-	border-radius: rem(4);
+	border-radius: 4px;
 }
 
 @include md {
 	.jumbotron {
-		padding: rem(64) rem(32);
+		padding: 64px 32px;
 	}
 }
 

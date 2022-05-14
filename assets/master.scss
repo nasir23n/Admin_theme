@@ -8,7 +8,7 @@
 
 body {
     background: #f0f0f0;
-    font-family: "Nunito Sans";
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 $transition: all 0.2s ease-in-out;
@@ -16,6 +16,17 @@ $transition: all 0.2s ease-in-out;
 :root {
     --aside: 250px;
     --aside_m: -250px;
+    --top_nav: 50px;
+
+    --transition: all 0.3s ease-in-out; 
+    
+    
+    // colors of light them
+    --scrollbar: linear-gradient(#2755df, #08cc98);
+    --light_gray: #F2F2F2;
+    --light_gray_active: #EAF3FF;
+    --dark1: #050505;
+    --aside_bg: #fff;
     --dark: #39444d;
     --gray: #f5f6f7;
     --fave: #3345a9;
