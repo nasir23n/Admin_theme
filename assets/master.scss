@@ -18,7 +18,7 @@
 }
 
 
-@import "mixin/bootstrap5";
+
 
 
 
@@ -26,7 +26,7 @@ $transition: all 0.2s ease-in-out;
 
 // nl css some
 @import "mixin/variable";
-// @import "mixin/reboot";
+@import "mixin/reboot";
 @import "mixin/function";
 @import "mixin/mixin"; 
 // @import "mixin/greed";
