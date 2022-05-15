@@ -6,7 +6,7 @@
     width: calc(100% - var(--aside));
     border-bottom: 1px solid #dddddd;
     border-left: 1px solid #dddddd;
-    height: 70px;
+    height: var(--top_nav_height);
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -16,7 +16,7 @@
     & .hidden_home {
         position: absolute;
         background: transparent;
-        height: 70px;
+        height: var(--top_nav_height);
         padding: 10px;
         font-size: 18px;
         font-weight: 500;
@@ -36,8 +36,8 @@
 
     &>.top_nav_toggle {
         background: #ffffff;
-        width: 60px;
-        height: 70px;
+        width: var(--top_nav_height);
+        height: var(--top_nav_height);
         position: relative;
         display: flex;
         flex-direction: column;
@@ -154,8 +154,8 @@
     // right setting drop 
     & .setting_drop {
         & .drop {
-            width: 70px;
-            height: 70px;
+            width: var(--top_nav_height);
+            height: var(--top_nav_height);
             font-size: 20px;
             color: #444444;
             text-shadow: 1px 1px 2px #525252;

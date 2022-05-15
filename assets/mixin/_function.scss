@@ -1,3 +1,4 @@
+@use "sass:math";
 // Color maker function
 @function make_color($nam) {
 	@if map-has-key($brand, $nam) {
@@ -22,7 +23,7 @@
 }
 
 @function rem($take) {
-	@return $take / 16+rem;
+	@return math.div($take, 16)+rem;
 }
 
 @function px($take) {

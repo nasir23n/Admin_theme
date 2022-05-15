@@ -16,7 +16,7 @@ $light_grey_hover: #EAF3FF;
     z-index: 100;
     transition: $transition;
     position: fixed;
-    padding-top: 70px; 
+    padding-top: var(--top_nav_height); 
     &.active {
         margin-left: var(--aside_m);
     }
@@ -31,7 +31,7 @@ $light_grey_hover: #EAF3FF;
 
     & .aside_top {
         width: var(--aside);
-        height: 70px;
+        height: var(--top_nav_height);
         border-bottom: 1px solid #dddddd;
         position: fixed;
         top: 0;
@@ -55,7 +55,7 @@ $light_grey_hover: #EAF3FF;
         width: var(--aside);
         height: calc(100% - 70px);
         position: fixed;
-        top: 70px;
+        top: var(--top_nav_height);
         overflow-y: auto;
         &::-webkit-scrollbar {
             width: 0px !important;

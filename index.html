@@ -1,138 +1,254 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Admin panel</title>
-    <link rel="stylesheet" href="common/font-awesome/css/all.css">
-    <link rel="stylesheet" href="assets/master.css">
-    
-    <script src="common/js/jquery-3.4.1.min.js"></script>
-
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+	<title>Admin panel</title>
+	<link rel="stylesheet" href="common/font-awesome/css/all.css" />
+	<link rel="stylesheet" href="assets/master.css" />
+	<script src="common/js/jquery-3.4.1.min.js"></script>
 </head>
+
 <body>
-    <!-- Everything wrapped by .main_wrap -->
-    <div class="main_wrap">
-        <!-- aside nav is relative to its inner content and 100vh height -->
-        <div class="aside" id="aside">
-            <!-- .aside_top is fixed to top of the sidebar -->
-            <a href="index.html" class="aside_top">
-                ADMIN PANEL
-            </a>
+	<!-- Everything wrapped by .main_wrap -->
+	<div class="main_wrap">
+		<!-- aside nav is relative to its inner content and 100vh height -->
+		<div class="aside" id="aside">
+			<!-- .aside_top is fixed to top of the sidebar -->
+			<a href="index.html" class="aside_top"> ADMIN PANEL </a>
 
-            <div class="aside_fixed_part">
-                <div class="aside_profile">
-                    <div class="profile_image">
-                        <img src="assets/image/user1.svg" alt="U">
-                    </div>
-                    <div class="info">
-                        <h4 class="name">Nasrullah</h4>
-                        <p>entnasir23a@gmail.com</p>
-                    </div>
-                </div>
-                <ul class="aside_links">
-                    <li>
-                        <a class="active" href="index.html">
-                            <i class="aside_icon fa fa-tachometer-alt"></i>
-                            Deshboard
-                        </a>
-                    </li>
-                    <li class="aside_drop">
-                        <a href="javascript:void(0)" class="aside_drop_btn">
-                            <i class="aside_icon fab  fa-canadian-maple-leaf"></i>
-                            Catagory
-                        </a>
-                        <ul>
-                            <li><a href="#">Add Catagory</a></li>
-                            <li><a href="#">All Catagory</a></li>
-                            <li>
-                                <a href="#">
-                                    Trashed Catagory
-                                    <span class="badges danger ml_auto" id="aside_trashed">
-                                        1
-                                    </span>
-                                </a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li class="aside_drop">
-                        <a href="javascript:void(0)" class="aside_drop_btn">
-                            <i class="far aside_icon fa-newspaper"></i>
-                            News
-                        </a>
-                        <ul>
-                            <li><a href="#">Add News</a></li>
-                            <li><a href="#">All News</a></li> 
-                            <li><a href="#">Drafed News</a></li>
-                        </ul>
-                    </li>
-                    <li class="aside_drop">
-                        <a href="javascript:void(0)" class="aside_drop_btn">
-                            <i class="fas aside_icon  fa-images"></i>
-                            Media
-                        </a>
-                        <ul>
-                            <li><a href="#">Add Media Item</a></li>
-                            <li><a href="#">All Media Item</a></li> 
-                            <li><a href="#">Trashed Media Item</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="javascript:void(0)">More Class</a></li>
-                </ul>
-            </div>
-        </div>
-        <div class="content_wrap">
-            <div class="top_nav">
-                <button class="top_nav_toggle" id="nav_toggle">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </button>
-                <a href="index.html" class="hidden_home">ADMIN PANEL</a>
-                <div class="setting_drop">
-                    <div class="drop_container">
-                        <button class="drop"><i class="fa fa-cog"></i></button>
-                        <ul class="drop_element drop_right">
-							<li><a href="javascript:void(0)"><i class="fa fa-cogs"></i>Vew profile</a></li>
-							<li><a href=""><i class="fa fa-users"></i>All Admin</a></li>
-							<li><a href="javascript:void(0)"><i class="fa fa-user"></i>Create profile</a></li>
-							<li><a href="javascript:void(0)"><i class="fa fa-adjust"></i>Panel layout</a></li>
-							<li><a href="javascript:void(0)"><i class="fa fa-sign-out-alt"></i>Logout</a></li>
+			<div class="aside_fixed_part">
+				<div class="aside_profile">
+					<div class="profile_image">
+						<img src="assets/image/user1.svg" alt="U" />
+					</div>
+					<div class="info">
+						<h4 class="name">Nasrullah</h4>
+						<p>entnasir23a@gmail.com</p>
+					</div>
+				</div>
+				<ul class="aside_links">
+					<li>
+						<a class="active" href="index.html">
+							<i class="aside_icon fa fa-tachometer-alt"></i>
+							Deshboard
+						</a>
+					</li>
+					<li class="aside_drop">
+						<a href="javascript:void(0)" class="aside_drop_btn">
+							<i class="aside_icon fab fa-canadian-maple-leaf"></i>
+							Catagory
+						</a>
+						<ul>
+							<li><a href="#">Add Catagory</a></li>
+							<li><a href="#">All Catagory</a></li>
+							<li>
+								<a href="#">
+									Trashed Catagory
+									<span class="badges danger ml_auto" id="aside_trashed">
+										1
+									</span>
+								</a>
+							</li>
 						</ul>
-                    </div>
-                </div>
-            </div>
-            <div class="main_content">
+					</li>
+					<li class="aside_drop">
+						<a href="javascript:void(0)" class="aside_drop_btn">
+							<i class="far aside_icon fa-newspaper"></i>
+							News
+						</a>
+						<ul>
+							<li><a href="#">Add News</a></li>
+							<li><a href="#">All News</a></li>
+							<li><a href="#">Drafed News</a></li>
+						</ul>
+					</li>
+					<li class="aside_drop">
+						<a href="javascript:void(0)" class="aside_drop_btn">
+							<i class="fas aside_icon fa-images"></i>
+							Media
+						</a>
+						<ul>
+							<li><a href="#">Add Media Item</a></li>
+							<li><a href="#">All Media Item</a></li>
+							<li><a href="#">Trashed Media Item</a></li>
+						</ul>
+					</li>
+					<li><a href="javascript:void(0)">More Class</a></li>
+				</ul>
+			</div>
+		</div>
+		<div class="content_wrap">
+			<div class="top_nav">
+				<button class="top_nav_toggle" id="nav_toggle">
+					<span></span>
+					<span></span>
+					<span></span>
+				</button>
+				<a href="index.html" class="hidden_home">ADMIN PANEL</a>
+				<div class="setting_drop">
+					<div class="drop_container">
+						<button class="drop"><i class="fa fa-cog"></i></button>
+						<ul class="drop_element drop_right">
+							<li>
+								<a href="javascript:void(0)"><i class="fa fa-cogs"></i>Vew profile</a>
+							</li>
+							<li>
+								<a href=""><i class="fa fa-users"></i>All Admin</a>
+							</li>
+							<li>
+								<a href="javascript:void(0)"><i class="fa fa-user"></i>Create profile</a>
+							</li>
+							<li>
+								<a href="javascript:void(0)"><i class="fa fa-adjust"></i>Panel layout</a>
+							</li>
+							<li>
+								<a href="javascript:void(0)"><i class="fa fa-sign-out-alt"></i>Logout</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="main_content">
+				<h1 class="content_header">Dashboard</h1>
+				<div class="row">
+					<div class="col-xxl-3 col-lg-4 col-md-6 col-sm-6">
+						<div class="panel">
+							<div class="body">
+								<h3>Total customer</h3>
+								<strong>5 customers</strong>
+							</div>
+							<div class="footer">
+								<a href="">All customer &nbsp;<i class="fa fa-arrow-circle-right"></i>
+								</a>
+							</div>
+						</div>
+					</div>
+					<div class="col-xxl-3 col-lg-4 col-md-6 col-sm-6">
+						<div class="panel">
+							<div class="body">
+								<h3>New Orders</h3>
+								<strong>520</strong>
+							</div>
+							<div class="footer">
+								<a href="">All orders &nbsp;<i class="fa fa-arrow-circle-right"></i>
+								</a>
+							</div>
+						</div>
+					</div>
+					<div class="col-xxl-3 col-lg-4 col-md-6 col-sm-6">
+						<div class="panel">
+							<div class="body">
+								<h3>Unique Visitors</h3>
+								<strong>65</strong>
+							</div>
+							<div class="footer">
+								<a href="">All visitior &nbsp;<i class="fa fa-arrow-circle-right"></i>
+								</a>
+							</div>
+						</div>
+					</div>
+					<div class="col-xxl-3 col-lg-4 col-md-6 col-sm-6">
+						<div class="panel">
+							<div class="body">
+								<h3>Bounce Rate</h3>
+								<strong>40%</strong>
+							</div>
+							<div class="footer">
+								<a href="">All visitior &nbsp;<i class="fa fa-arrow-circle-right"></i>
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="panel">
+					<div class="header">
+						<h3 class="card-title">Bordered Table</h3>
+					</div>
 
-                <div class="panel">
-                    <div class="header">
-                        <h2>Header</h2>
-                        <button class="nl primary ml_auto">Click</button>
-                    </div>
-                    <div class="body">
-                        Some body <button class="nl green">&#9587;</button>
-                        <div class="form_row">
-                            <div class="col_md_6">
-                                <input type="text" class="form_control" placeholder="Some">
-                            </div>
-                            <div class="col_md_6">
-                                <input type="text" class="form_control danger" placeholder="Some">
-                            </div>
-                        </div>
+					<div class="body">
+						<table class="table table-bordered">
+							<thead>
+								<tr>
+									<th style="width: 10px">#</th>
+									<th>Task</th>
+									<th>Progress</th>
+									<th style="width: 40px">Label</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>1.</td>
+									<td>Update software</td>
+									<td>
+										<div class="progress progress-xs">
+											<div class="progress-bar progress-bar-danger"
+												style="width: 55%"></div>
+										</div>
+									</td>
+									<td><span class="badge bg-danger">55%</span></td>
+								</tr>
+								<tr>
+									<td>2.</td>
+									<td>Clean database</td>
+									<td>
+										<div class="progress progress-xs">
+											<div class="progress-bar bg-warning" style="width: 70%"></div>
+										</div>
+									</td>
+									<td><span class="badge bg-warning">70%</span></td>
+								</tr>
+								<tr>
+									<td>3.</td>
+									<td>Cron job running</td>
+									<td>
+										<div class="progress progress-xs progress-striped active">
+											<div class="progress-bar bg-primary" style="width: 30%"></div>
+										</div>
+									</td>
+									<td><span class="badge bg-primary">30%</span></td>
+								</tr>
+								<tr>
+									<td>4.</td>
+									<td>Fix and squish bugs</td>
+									<td>
+										<div class="progress progress-xs progress-striped active">
+											<div class="progress-bar bg-success" style="width: 90%"></div>
+										</div>
+									</td>
+									<td><span class="badge bg-success">90%</span></td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
 
-                        <div class="alert danger">
-                            some
-                            <button class="close">&times;</button>
-                        </div>
-                    </div>
-                    <div class="footer">Footer</div>
-                </div>
+					<div class="footer clearfix">
+						<ul class="pagination pagination-sm m-0 float-right">
+							<li class="page-item">
+								<a class="page-link" href="#">«</a>
+							</li>
+							<li class="page-item">
+								<a class="page-link" href="#">1</a>
+							</li>
+							<li class="page-item">
+								<a class="page-link" href="#">2</a>
+							</li>
+							<li class="page-item">
+								<a class="page-link" href="#">3</a>
+							</li>
+							<li class="page-item">
+								<a class="page-link" href="#">»</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 
-            </div>
-        </div>
-    </div>
-    
-    <script src="assets/js/app.js"></script>
-    </body>
+	<script src="assets/js/app.js"></script>
+</body>
+
 </html>

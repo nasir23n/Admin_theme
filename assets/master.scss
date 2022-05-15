@@ -1,26 +1,11 @@
-*,
-*::before,
-*::after {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
 
-body {
-    background: #f0f0f0;
-    font-family: Arial, Helvetica, sans-serif;
-}
-
-$transition: all 0.2s ease-in-out;
 
 :root {
     --aside: 250px;
     --aside_m: -250px;
-    --top_nav: 50px;
-
+    --top_nav_height: 60px;
     --transition: all 0.3s ease-in-out; 
-    
-    
+
     // colors of light them
     --scrollbar: linear-gradient(#2755df, #08cc98);
     --light_gray: #F2F2F2;
@@ -33,75 +18,32 @@ $transition: all 0.2s ease-in-out;
 }
 
 
-button {
-    outline: none;
-    border: none;
-    background: transparent;
-    cursor: pointer;
+@import "mixin/bootstrap5";
 
-    &:focus {
-        outline: none;
-    }
-}
 
-a {
-    text-decoration: none;
-}
 
-ul {
-    padding: 0;
-    list-style: none;
-}
-
-img {
-    display: block;
-    width: 100%;
-}
-
-/* Make nerrow and custom color scrollbar */
-::-webkit-scrollbar {
-    /* scrollbar width */
-    width: 8px;
-    height: 0px;
-}
-
-::-webkit-scrollbar-track {
-    /* scrollable area background */
-    background: #272822;
-}
-
-::-webkit-scrollbar-thumb {
-    /* Make scroller thumb or scroll controller background */
-    background: #646461;
-    border-radius: 50px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-    /* scroll controller hoverd background */
-    background: #a0a098;
-}
-
-::-webkit-scrollbar-thumb:active {
-    /* scroll controller active background */
-    background: #646461;
-}
+$transition: all 0.2s ease-in-out;
 
 // nl css some
 @import "mixin/variable";
+// @import "mixin/reboot";
 @import "mixin/function";
 @import "mixin/mixin"; 
-@import "mixin/colors";
-@import "mixin/greed";
+// @import "mixin/greed";
 @import "mixin/panel";
 @import "mixin/form";
 @import "mixin/button";
-@import "mixin/alert";
-@import "mixin/table";
-@import "mixin/preloder";
+// @import "mixin/alert";
+// @import "mixin/table";
+// @import "mixin/preloder";
 @import "mixin/dropdown";
-@import "mixin/bandage";
-@import "mixin/popup";
-@import "mixin/util";
+// @import "mixin/bandage";
+// @import "mixin/popup";
+// @import "mixin/colors";
+// @import "mixin/util";
+
+
+
 // /* ------------------------------------ */
 
 /////////////////////////////////////////////
@@ -117,7 +59,7 @@ img {
     min-height: 100vh;
 }
 
-.heading {
+.content_header {
     width: 100%;
     margin-bottom: 20px;
     font-weight: bold;
@@ -310,3 +252,43 @@ img {
 /////////////////////////
 /////////////////////////
 /////////////////////////
+.deshboard_wrap {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 15px;
+    margin-bottom: 20px;
+}
+@media (max-width: 1100px) {
+    .deshboard_wrap {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+@media (max-width: 768px) {
+    .deshboard_wrap {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+@media (max-width: 450px) {
+    .deshboard_wrap {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
+.deshboard_wrap .card-body * {
+    color: #ffffff;
+}
+
+.sell_row, .order_row {
+    transition: all 0.2s ease-in-out;
+}
+.order_row:hover,
+.sell_row:hover {
+    background: #eee;
+    cursor: pointer;
+}
+.check_op {
+    display: flex;
+    align-items: center;
+}
+.check_op span {
+    margin-right: 10px;
+}

@@ -10,11 +10,11 @@ $bg: #f5f5f5;
 .table {
    width: 100%;
    border-collapse: collapse;
-   margin: rem(15) 0 rem(20);
+   margin: 15px 0 20px;
 
    & tr>th,
    & tr>td {
-      padding: rem(8) rem(10);
+      padding: 8px 10px;
       text-align: inherit;
    }
 
@@ -25,11 +25,11 @@ $bg: #f5f5f5;
 
    &.bordered th,
    &.bordered td {
-      border: rem(1) solid $bor;
+      border: 1px solid $bor;
    }
    &.bottom_bordered th,
    &.bottom_bordered td {
-      border-bottom: rem(1) solid $bor;
+      border-bottom: 1px solid $bor;
    }
 
    &.hover tr:hover {
@@ -53,58 +53,110 @@ $bg: #f5f5f5;
       }
    }
 
-   @each $maps, $name in $all_colors {
-      @each $key, $value in $name {
-         &.#{$key} {
-            tr>th {
-               background: #{$value};
-               color: #ffffff;
-            }
-
-            &.yellow tr th,
-            &.yellow tr td {
-               color: #333333 !important;
-            }
-
-            &.hover tr:hover {
-               background: transparentize($value, 0.7);
-            }
-
-            & tr>th,
-            & tr>td {
-               border-color: lighten($value, 5);
-            }
-
-            // &.fill {
-            //    background: #{$value} !important;
-            //    color: #fff;
-
-            //    & th {
-            //       background: darken($value, 5);
-            //    }
-
-            //    & tr>th,
-            //    & tr>td {
-            //       border-color: lighten($value, 10);
-            //    }
-
-            //    tr:hover {
-            //       background: lighten($value, 5) !important;
-            //    }
-
-            //    &.even {
-            //       tr:nth-child(even) {
-            //          background: lighten($value, 10) !important;
-            //       }
-            //    }
-
-            //    &.odd {
-            //       tr:nth-child(odd) {
-            //          background: lighten($value, 10) !important;
-            //       }
-            //    }
-            // }
+   @each $key, $value in $brand {
+      &.#{$key} {
+         tr>th {
+            background: lighten($value, 30);
+            color: darken($value, 40);
          }
+
+         &.yellow tr th,
+         &.yellow tr td {
+            color: #333333 !important;
+         }
+
+         &.hover tr:hover {
+            background: transparentize($value, 0.8);
+         }
+
+         & tr>th,
+         & tr>td {
+            border-color: lighten($value, 35);
+         }
+
+         // &.fill {
+         //    background: #{$value} !important;
+         //    color: #fff;
+
+         //    & th {
+         //       background: darken($value, 5);
+         //    }
+
+         //    & tr>th,
+         //    & tr>td {
+         //       border-color: lighten($value, 10);
+         //    }
+
+         //    tr:hover {
+         //       background: lighten($value, 5) !important;
+         //    }
+
+         //    &.even {
+         //       tr:nth-child(even) {
+         //          background: lighten($value, 10) !important;
+         //       }
+         //    }
+
+         //    &.odd {
+         //       tr:nth-child(odd) {
+         //          background: lighten($value, 10) !important;
+         //       }
+         //    }
+         // }
       }
    }
+   // @each $maps, $name in $all_colors {
+   //    @each $key, $value in $brand {
+   //       &.#{$key} {
+   //          tr>th {
+   //             background: #{$value};
+   //             color: #ffffff;
+   //          }
+
+   //          &.yellow tr th,
+   //          &.yellow tr td {
+   //             color: #333333 !important;
+   //          }
+
+   //          &.hover tr:hover {
+   //             background: transparentize($value, 0.7);
+   //          }
+
+   //          & tr>th,
+   //          & tr>td {
+   //             border-color: lighten($value, 5);
+   //          }
+
+   //          // &.fill {
+   //          //    background: #{$value} !important;
+   //          //    color: #fff;
+
+   //          //    & th {
+   //          //       background: darken($value, 5);
+   //          //    }
+
+   //          //    & tr>th,
+   //          //    & tr>td {
+   //          //       border-color: lighten($value, 10);
+   //          //    }
+
+   //          //    tr:hover {
+   //          //       background: lighten($value, 5) !important;
+   //          //    }
+
+   //          //    &.even {
+   //          //       tr:nth-child(even) {
+   //          //          background: lighten($value, 10) !important;
+   //          //       }
+   //          //    }
+
+   //          //    &.odd {
+   //          //       tr:nth-child(odd) {
+   //          //          background: lighten($value, 10) !important;
+   //          //       }
+   //          //    }
+   //          // }
+   //       }
+   //    }
+   // }
 }

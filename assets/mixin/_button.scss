@@ -1,46 +1,46 @@
 // /**
 // ***all button class list
-// nl 
-// nl.default
-// nl.primary
-// nl.secondary
-// nl.success
-// nl.info
-// nl.warning
-// nl.danger
-// nl.facebook
-// nl.youtube
-// nl.twitter
-// nl.linkedin
-// nl.skype
-// nl.dropbox
-// nl.tumblr
-// nl.pinterest
-// nl.snapchat
-// nl.green
-// nl.deep_green
-// nl.purple
-// nl.deep_purple
-// nl.indigo
-// nl.teal
-// nl.cyan
-// nl.orange
-// nl.deep_orange
-// nl.dark
-// nl.black
-// nl.red
-// nl.pink
-// nl.blue
-// nl.light_blue
-// nl.yellow
-// nl.brown
-// nl.grey
+// nl_btn 
+// nl_btn.default
+// nl_btn.primary
+// nl_btn.secondary
+// nl_btn.success
+// nl_btn.info
+// nl_btn.warning
+// nl_btn.danger
+// nl_btn.facebook
+// nl_btn.youtube
+// nl_btn.twitter
+// nl_btn.linkedin
+// nl_btn.skype
+// nl_btn.dropbox
+// nl_btn.tumblr
+// nl_btn.pinterest
+// nl_btn.snapchat
+// nl_btn.green
+// nl_btn.deep_green
+// nl_btn.purple
+// nl_btn.deep_purple
+// nl_btn.indigo
+// nl_btn.teal
+// nl_btn.cyan
+// nl_btn.orange
+// nl_btn.deep_orange
+// nl_btn.dark
+// nl_btn.black
+// nl_btn.red
+// nl_btn.pink
+// nl_btn.blue
+// nl_btn.light_blue
+// nl_btn.yellow
+// nl_btn.brown
+// nl_btn.grey
 
 // ***outline button 
-// nl.outline 
+// nl_btn.outline 
 // ***outline theme
-// nl.success .................etc */  
-.nl {
+// nl_btn.success .................etc */  
+.nl_btn {
    display: inline-block;
    font-size: rem(16);
    margin: rem(5) 0;
@@ -57,12 +57,10 @@
    text-align: center;
 	user-select: none;
    vertical-align: middle;
-   box-shadow: $sdw1;
    border-radius: 6px;
    @include hover_focus() {
-      box-shadow: $sdw2;
       // box-shadow: 0 4px 4px rgba(0, 0, 0, 0.16), 0 4px 10px rgba(0, 0, 0, 0.12);
-      background: make_color('g3');
+      background: #DADDE1;
       text-decoration: none;
    }
    
@@ -99,7 +97,7 @@
       padding: 3px 5px;
    }
    // theme start 
-   @each $maps, $name in $all_colors { 
+   @each $maps, $name in $all_colors {
       @each $key, $value in $name {
          &.#{$key} {
             background: $value;
