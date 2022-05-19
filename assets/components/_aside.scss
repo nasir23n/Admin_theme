@@ -90,10 +90,12 @@ $light_grey_hover: #EAF3FF;
     }
 
     & .aside_links {
+        &>li {
+            padding: 0 7px;
+        }
         & li {
             position: relative;
             transition: $transition;
-            padding: 0 7px;
             &.aside_drop {
                 & .aside_drop_btn {
                     position: relative;
