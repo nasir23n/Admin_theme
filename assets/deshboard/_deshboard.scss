@@ -1,0 +1,45 @@
+/* deshboard start */
+.deshboard_items {
+    display: flex;
+    border-radius: 0 60px 60px 0;
+    background: var(--fave);
+    color: #fff;
+    margin-bottom: 25px;
+    box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.2);
+
+    & .deshboard_content {
+        padding: 20px 10px;
+
+        & * {
+            margin: 0;
+            font-size: 18px;
+        }
+
+        & p {
+            margin: 0 !important;
+            font-size: 15px;
+        }
+    }
+
+    & .deshboard_icon {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        // padding: 0 18px;
+        width: 70px;
+        font-size: 35px;
+        background: rgba(255, 255, 255, 0.28);
+    }
+
+    // &.success{
+    //    background: map-get($brand, success);
+    //    box-shadow: 0 5px 10px 0 transparentize(map-get($brand, success), 0.7);
+    // }
+    @each $key,
+    $value in $brand {
+        &.#{$key} {
+            background: #{$value};
+            box-shadow: 0 5px 10px 0 transparentize($value, 0.6);
+        }
+    }
+}
