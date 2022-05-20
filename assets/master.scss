@@ -19,6 +19,44 @@
 
 $transition: all 0.2s ease-in-out;
 
+/*
+ *  STYLE 7
+ */
+
+::-webkit-scrollbar-track {
+     background-color: #F5F5F5;
+}
+
+::-webkit-scrollbar {
+     width: 8px;
+     background-color: #F5F5F5;
+}
+ 
+::-webkit-scrollbar-thumb {
+     background-image: -webkit-gradient(linear,
+                                        left bottom,
+                                        left top,
+                                        color-stop(0.44, rgb(122,153,217)),
+                                        color-stop(0.72, rgb(73,125,189)),
+                                        color-stop(0.86, rgb(28,58,148)));
+}
+
+
+
+.DropDownSlide {
+    animation-name: DropDownSlide;
+    animation-duration: .3s;
+    animation-fill-mode: both;
+}
+
+@keyframes DropDownSlide {
+    100%{
+        transform:translateY(0)
+    }
+    0%{
+        transform:translateY(10px)
+    }
+}
 // nl css some
 @import "mixin/variable";
 @import "mixin/dropdown";
@@ -40,7 +78,7 @@ $transition: all 0.2s ease-in-out;
 @import "components/aside";
 @import "components/content";
 @import "components/top_nav";
-@import "deshboard/deshboard";
+// @import "deshboard/deshboard";
 @import "components/nl_modal";
 
 // /* ------------------------------------ */
@@ -53,7 +91,7 @@ $transition: all 0.2s ease-in-out;
 
 .main_wrap {
     display: flex;
-    background: var(--gray);
+    background: #EEF1F9;
     min-width: 100%;
     min-height: 100vh;
 }
@@ -61,7 +99,6 @@ $transition: all 0.2s ease-in-out;
 .content_header {
     width: 100%;
     margin-bottom: 20px;
-    font-weight: bold;
     text-shadow: 1px 2px 3px rgba(0, 0, 0, 0.2);
 }
 

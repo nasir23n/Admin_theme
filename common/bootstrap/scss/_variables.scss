@@ -330,6 +330,22 @@ $escaped-characters: (
   (")", "%29"),
 ) !default;
 
+// all color array 
+// this code is added by https://github.com/nasir23n
+// grays: $grays,
+$all_colors: (
+  blues: $blues,
+  indigos: $indigos,
+  purples: $purples,
+  pinks: $pinks,
+  reds: $reds,
+  oranges: $oranges,
+  yellows: $yellows,
+  greens: $greens,
+  cyans: $cyans,
+) !default;
+
+
 // Options
 //
 // Quickly modify global styling by enabling or disabling optional features.
@@ -660,7 +676,7 @@ $table-cell-padding-x:        .5rem !default;
 $table-cell-padding-y-sm:     .25rem !default;
 $table-cell-padding-x-sm:     .25rem !default;
 
-$table-cell-vertical-align:   top !default;
+$table-cell-vertical-align:   middle !default;
 
 $table-color:                 var(--#{$prefix}body-color) !default;
 $table-bg:                    transparent !default;
@@ -1381,7 +1397,7 @@ $badge-font-weight:                 $font-weight-bold !default;
 $badge-color:                       $white !default;
 $badge-padding-y:                   .35em !default;
 $badge-padding-x:                   .65em !default;
-$badge-border-radius:               $border-radius !default;
+$badge-border-radius:               3px !default;
 // scss-docs-end badge-variables
 
 

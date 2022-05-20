@@ -395,6 +395,7 @@ button {
   // stylelint-disable-next-line property-disallowed-list
   border-radius: 0;
   border: none;
+  background: transparent;
 }
 
 // Explicitly remove focus outline in Chromium when it shouldn't be
