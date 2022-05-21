@@ -15,6 +15,12 @@
     --#{$prefix}gray-#{$color}: #{$value};
   }
 
+  @each $maps, $name in $all_colors {
+    @each $color, $value in $name {
+        --#{$prefix}-#{$color}: #{$value};
+    }
+  }
+
   @each $color, $value in $theme-colors {
     --#{$prefix}#{$color}: #{$value};
   }

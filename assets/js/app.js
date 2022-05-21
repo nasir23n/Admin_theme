@@ -23,9 +23,6 @@ $('.alert .close').click(function () {
 	$(this).parent().on('animationend', () => {
 		$(this).parent().remove();
 	});
-    // $('.top_nav').toggleClass('active');
-    // $('.content_wrap').toggleClass('active');
-    // $('#aside').toggleClass('active');
 });
 
 

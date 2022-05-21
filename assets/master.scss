@@ -33,16 +33,22 @@ $transition: all 0.2s ease-in-out;
 }
  
 ::-webkit-scrollbar-thumb {
-     background-image: -webkit-gradient(linear,
-                                        left bottom,
-                                        left top,
-                                        color-stop(0.44, rgb(122,153,217)),
-                                        color-stop(0.72, rgb(73,125,189)),
-                                        color-stop(0.86, rgb(28,58,148)));
+    background: #adb5bd;
+    //  background-image: -webkit-gradient(linear,
+    //                                     left bottom,
+    //                                     left top,
+    //                                     color-stop(0.44, rgb(122,153,217)),
+    //                                     color-stop(0.72, rgb(73,125,189)),
+    //                                     color-stop(0.86, rgb(28,58,148)));
 }
 
 
-
+::-webkit-scrollbar-thumb:hover {
+    background: #bac2c9;
+}
+::-webkit-scrollbar-thumb:active {
+    background: #a1b2c3;
+}
 .DropDownSlide {
     animation-name: DropDownSlide;
     animation-duration: .3s;

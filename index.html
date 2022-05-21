@@ -39,44 +39,22 @@
 					<li class="aside_drop">
 						<a href="javascript:void(0)" class="aside_drop_btn">
 							<i class="aside_icon fab fa-canadian-maple-leaf"></i>
-							Catagory
+							Collapse
 						</a>
 						<ul>
-							<li><a href="#">Add Catagory</a></li>
-							<li><a href="#">All Catagory</a></li>
+							<li><a href="#">Link One</a></li>
+							<li><a href="#">Link Two</a></li>
 							<li>
 								<a href="#">
-									Trashed Catagory
-									<span class="badges danger ml_auto" id="aside_trashed">
+									Link Three
+									<span class="badge text-bg-red-200 ms-2" id="aside_trashed">
 										1
 									</span>
 								</a>
 							</li>
 						</ul>
 					</li>
-					<li class="aside_drop">
-						<a href="javascript:void(0)" class="aside_drop_btn">
-							<i class="far aside_icon fa-newspaper"></i>
-							News
-						</a>
-						<ul>
-							<li><a href="#">Add News</a></li>
-							<li><a href="#">All News</a></li>
-							<li><a href="#">Drafed News</a></li>
-						</ul>
-					</li>
-					<li class="aside_drop">
-						<a href="javascript:void(0)" class="aside_drop_btn">
-							<i class="fas aside_icon fa-images"></i>
-							Media
-						</a>
-						<ul>
-							<li><a href="#">Add Media Item</a></li>
-							<li><a href="#">All Media Item</a></li>
-							<li><a href="#">Trashed Media Item</a></li>
-						</ul>
-					</li>
-					<li><a href="javascript:void(0)">More Class</a></li>
+					<li><a href="icon.html" class=""><i class="fas aside_icon fa-images"></i> Icons</a></li>
 				</ul>
 			</div>
 		</div>
@@ -209,23 +187,9 @@
 
 				</div>
 
-				<div class="row">
-					<div class="col-md-12">
-						<div class="card">
-							<div class="card-body">
-								<div>
-									<div class="toolbar">
-										Progress
-									</div>
-									<div id="chart-timeline"></div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
 
 				<div class="row g-4 my-3">
-					<div class="col-md-6">
+					<div class="col-lg-6">
 						<div class="card">
 							<div class="card-body">
 								<div class="d-flex justify-content-between align-items-center mb-2">
@@ -395,13 +359,14 @@
 							</div>
 						</div>
 					</div> <!-- Chart col end -->
-					<div class="col-md-6">
+					<div class="col-lg-6">
 						<div class="card">
 							<div class="card-body">
 								<div class="toolbar">
 									Progress
 								</div>
-								<div id="chart"></div>
+								<!-- <div id="chart"></div> -->
+								<canvas id="myChart"></canvas>
 							</div>
 						</div>
 					</div>
@@ -413,14 +378,45 @@
 	</div> <!-- / .main_wrap -->
 
 	<script src="common/js/jquery-3.4.1.min.js"></script>
-	<script src="common/js/popper.min.js"></script>
-	<script src="common/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-	<script src="common/apexcharts/apexcharts.min.js"></script>
+	<script src="common/bootstrap/js/bootstrap.bundle.min.js"></script>
+	<script src="common/js/chart.min.js"></script>
 	<script src="assets/js/app.js"></script>
-	<script src="assets/js/dashboard.js"></script>
 	<script>
-		const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
-		const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl));
+		const ctx = document.getElementById('myChart').getContext('2d');
+		const myChart = new Chart(ctx, {
+			type: 'bar',
+			data: {
+				labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+				datasets: [{
+					label: '# of Votes',
+					data: [12, 19, 3, 5, 2, 3],
+					backgroundColor: [
+						'rgba(255, 99, 132, 0.2)',
+						'rgba(54, 162, 235, 0.2)',
+						'rgba(255, 206, 86, 0.2)',
+						'rgba(75, 192, 192, 0.2)',
+						'rgba(153, 102, 255, 0.2)',
+						'rgba(255, 159, 64, 0.2)'
+					],
+					borderColor: [
+						'rgba(255, 99, 132, 1)',
+						'rgba(54, 162, 235, 1)',
+						'rgba(255, 206, 86, 1)',
+						'rgba(75, 192, 192, 1)',
+						'rgba(153, 102, 255, 1)',
+						'rgba(255, 159, 64, 1)'
+					],
+					borderWidth: 1
+				}]
+			},
+			options: {
+				scales: {
+					y: {
+						beginAtZero: true
+					}
+				}
+			}
+		});
 	</script>
 
 </body>
