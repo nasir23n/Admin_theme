@@ -10,6 +10,9 @@
 	<link rel="stylesheet" href="common/bootstrap/icons/bootstrap-icons.css">
 	<link rel="stylesheet" href="common/bootstrap/scss/bootstrap.css" />
 	<link rel="stylesheet" href="assets/master.css" />
+
+	<script src="common/js/jquery-3.4.1.min.js"></script>
+	<script src="assets/js/nl.js"></script>
 </head>
 
 <body>
@@ -93,6 +96,11 @@
 			</div>
 			<div class="main_content">
 				<h3 class="content_header">Dashboard</h3>
+				<div class="row">
+					<div class="col-md-12 mb-4">
+						<button id="nl_modal" class="btn btn-primary">modal</button>
+					</div>
+				</div>
 
 				<div class="row mb-3 gy-4 gx-4">
 					
@@ -379,11 +387,23 @@
 		</div> <!-- / .content_wrap -->
 	</div> <!-- / .main_wrap -->
 
-	<script src="common/js/jquery-3.4.1.min.js"></script>
+
 	<script src="common/bootstrap/js/bootstrap.bundle.min.js"></script>
 	<script src="common/js/chart.min.js"></script>
 	<script src="assets/js/app.js"></script>
 	<script>
+		$('#nl_modal').click(function() {
+			NL_Modal.open({
+				size: 'md',
+				preload: true,
+				body: function(body_class) {
+					body_class.html(`
+						<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem consectetur quisquam assumenda tempore facere repellendus earum officiis amet odit quas, tempora eveniet debitis! Nulla eligendi tempore culpa id laudantium? Adipisci.</p>
+						<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem consectetur quisquam assumenda tempore facere repellendus earum officiis amet odit quas, tempora eveniet debitis! Nulla eligendi tempore culpa id laudantium? Adipisci.</p>
+					`);
+				}
+			});
+		});
 		const ctx = document.getElementById('myChart').getContext('2d');
 		const myChart = new Chart(ctx, {
 			type: 'bar',
