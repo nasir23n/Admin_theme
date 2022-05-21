@@ -30,7 +30,9 @@ var anim_out_array = [
 	    open(x=null) {
             
 			var modal, 
-				dialog, 
+				dialog,
+				size,
+				style='',
 				open_animation, 
 				close_animation, 
 				body,
@@ -39,21 +41,30 @@ var anim_out_array = [
 				custom = false,
 				_this = this,
 				body_class,
-				x = (x !== null) ? x : {}, 
-				modal_content = `<div class="modal_mask" id="nl_modal_360">
-								    <div class="modal_container animated">
+				x = (x !== null) ? x : {};
+			if (typeof x.size === 'string') {
+				if (x.size === 'sm') size = 'modal_sm';
+				if (x.size === 'md') size = 'modal_md';
+				if (x.size === 'lg') size = 'modal_lg';
+			}
+			
+			if (typeof x.size === 'object') {
+				for (const obj in x.size) {
+					style += `${obj}: ${x.size[obj]};`;
+				}
+			}
+			
+			var modal_content = `<div class="modal_mask" id="nl_modal_360">
+								    <div class="modal_container ${(size) ? size : ''} animated" style="${(style) ? style : ''}">
 								        <div class="modal_header">
 								            <div class="modal_title"></div>
 								            <div class="modal_right">
 								                <button class="modal_close">&times;</button>
 								            </div>
 								        </div>
-								        <div class="modal_body" id="single_product_body">
-								            
-								        </div>
+								        <div class="modal_body" id="single_product_body"></div>
 								    </div>
 								</div>`;
-			
 			if (x.id !== undefined) {
 				id = $('#'+x.id);
 				if (id.length == 1) {
@@ -147,7 +158,7 @@ var anim_out_array = [
 		        body_class.removeClass('flex_center');
 		        body(body_class, _this);
 		    }    
-		    // //////////////////
+		    //////////////////
 		    if (!this.x) {
 		    	this.x = {
 			    	modal: modal,
@@ -156,12 +167,17 @@ var anim_out_array = [
 			    }
 		    }
 		    
-		    // // modal close process
-		    // // console.log(_this)
+		    // modal close process
+		    // console.log(_this)
 		    modal.find('.modal_close').click(function(){
 		        _this.close();
 		    });
-		    // //////////////////
+			modal.click((e) => {
+				if (e.target.classList.contains('modal_mask')) {
+					_this.close();
+				}
+			});
+		    //////////////////
 		    
 		    return this;
 		}
