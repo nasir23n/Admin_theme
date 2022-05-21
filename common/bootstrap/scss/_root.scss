@@ -17,7 +17,7 @@
 
   @each $maps, $name in $all_colors {
     @each $color, $value in $name {
-        --#{$prefix}-#{$color}: #{$value};
+        --#{$prefix}#{$color}: #{$value};
     }
   }
 

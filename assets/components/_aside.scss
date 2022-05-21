@@ -166,7 +166,7 @@ $light_grey_hover: #EAF3FF;
                         }
                     }
                     &.active { 
-                        background: var(--light_gray_active);
+                        // background: var(--light_gray_active);
                         &:before {
                             transform: translate(-50%, -50%) rotate(45deg);
                             top: calc(50% - 2px);
