@@ -1,3 +1,64 @@
+// notification start 
+.nl_notify_container {
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    max-width: 300px;
+    @media (min-width: 300px) {
+        max-width: 400px;
+    }
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-height: calc(100% - 100px);
+    overflow-y: auto;
+    .nl_notify {
+        background: #fff;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3);
+        padding: 10px;
+        padding-top: 25px;
+        border-radius: 6px;
+        position: relative;
+        display: flex;
+        align-items: center;
+        // animation: fadeInUp 0.4s;
+        
+        .icon {
+            --wh: 40px;
+            padding: 10px;
+            font-size: 25px;
+            svg {
+                width: var(--wh);
+                height: var(--wh);
+            }
+        }
+        .close {
+            position: absolute;
+            top: 5px;
+            right: 5px;
+            background: transparent;
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+            font-size: 16px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            // color: #fff;
+            &:hover {
+                background: rgba(15, 20, 25, 0.1);
+            }
+        }
+        &.success {
+            background: var(--bs-green-600);
+            color: #eaeaea;
+            .close svg {
+                color: #fff;
+            }
+        }
+    }
+}
 .modal_mask {
 	position: fixed;
 	z-index: 99999;

@@ -8,13 +8,13 @@ $light_grey_hover: #EAF3FF;
     width: calc(var(--aside) + 1px);
     height: 100vh;
     // background: #00579e;
-    border-right: 1px solid #ddd;
-    background: #fff;
-    box-shadow: 5px 0 4px 0 rgba(230, 230, 230, 0.15);
+    border-right: 1px solid var(--border_color);
+    background: var(--aside_bg);
+    box-shadow: 5px 0 4px 0 var(--light_shadow);
     // background: linear-gradient(90deg, #3345a9, #673AB7);
     overflow-y: auto;
     z-index: 100;
-    transition: $transition;
+    transition: var(--transition);
     position: fixed;
     padding-top: var(--top_nav_height); 
     &.active {
@@ -32,23 +32,23 @@ $light_grey_hover: #EAF3FF;
     & .aside_top {
         width: var(--aside);
         height: var(--top_nav_height);
-        border-bottom: 1px solid #dddddd;
+        border-bottom: 1px solid var(--l_gr_active);
         position: fixed;
         top: 0;
         left: 0;
         display: flex;
         justify-content: center;
         align-items: center;
-        background: #ffffff;
+        background: var(--aside_bg);
         padding: 10px;
         font-size: 18px;
         font-weight: 500;
-        color: #050505;
-        transition: $transition;
+        color: var(--txt_on_light);
+        transition: var(--transition);
 
         &:hover {
             text-decoration: none;
-            background: var(--light_gray);
+            background: var(--l_gr_active);
         }
     }
     & .aside_fixed_part {
@@ -62,23 +62,29 @@ $light_grey_hover: #EAF3FF;
         }
     }
     & .aside_profile {
-        padding: 20px 0;
-        padding-top: 30px;
+        padding: 12px 0;
+        // padding-top: 30px;
+        display: flex;
+        align-items: center;
+        gap: 15px;
         & .profile_image {
             position: relative;
             display: flex;
             justify-content: center;
             align-items: center;
             & img {
-                width: 70px;
+                width: 50px;
+                height: 50px;
+                border-radius: 50%;
+                border: 2px solid var(--border_color);
             }
         }
         & .info {
             text-align: center;
-            padding-top: 15px;
+            // padding-top: 15px;
             & * {
                 margin: 0;
-                color: var(--fave);
+                color: var(--txt_on_light);
             }
             & .name {
                 text-transform: uppercase;
@@ -95,7 +101,7 @@ $light_grey_hover: #EAF3FF;
         }
         & li {
             position: relative;
-            transition: $transition;
+            transition: var(--transition);
             &.aside_drop {
                 & .aside_drop_btn {
                     position: relative;
@@ -105,15 +111,15 @@ $light_grey_hover: #EAF3FF;
                         width: 10px;
                         height: 10px;
                         background: transparent;
-                        border-right: 1px solid #333;
-                        border-bottom: 1px solid #333;
+                        border-right: 1px solid var(--txt_on_light);
+                        border-bottom: 1px solid var(--txt_on_light);
                         z-index: 1;
                         position: absolute;
                         right: 15px;
                         top: 50%;
                         transform: translate(-50%, -50%) rotate(-45deg);
                         pointer-events: none;
-                        transition: $transition;
+                        transition: var(--transition);
                     }
                     & + ul {
                         margin-left: 15px;
@@ -126,7 +132,7 @@ $light_grey_hover: #EAF3FF;
                                     display: block;
                                     width: 10px;
                                     height: 2px;
-                                    background: #333;
+                                    background: var(--txt_on_light);
                                     position: absolute;
                                     top: 50%;
                                     left: 5px;
@@ -143,9 +149,9 @@ $light_grey_hover: #EAF3FF;
                                     left: -20px;
                                     opacity: 0;
                                     transform: translate(-50%, -50%) rotate(-45deg);
-                                    border-right: 2px solid #333;
-                                    border-bottom: 2px solid #333;
-                                    transition: $transition;
+                                    border-right: 2px solid var(--txt_on_light);
+                                    border-bottom: 2px solid var(--txt_on_light);
+                                    transition: var(--transition);
                                     pointer-events: none;
                                 }
                                 &:hover {
@@ -156,7 +162,7 @@ $light_grey_hover: #EAF3FF;
                                     }
                                 }
                                 &.active {
-                                    background: #ddd;
+                                    background: var(--l_gr_active);
                                     &::after {
                                         left: calc(5px + 7px);
                                         opacity: 1;
@@ -179,7 +185,7 @@ $light_grey_hover: #EAF3FF;
                     }
                 }
                 & ul {
-                    background: rgba(230, 230, 230, 0.15);
+                    // background: var(--l_gr_active);
                     & li {
                         position: relative;
                         height: 0;
@@ -194,8 +200,8 @@ $light_grey_hover: #EAF3FF;
                 // border-bottom: 1px solid rgba(28, 103, 202, 0.22);
                 position: relative;
                 cursor: pointer;
-                color: #050505;
-                transition: $transition;
+                color: var(--txt_on_light);
+                transition: var(--transition);
                 user-select: none;
                 border-radius: 5px;
                 & .aside_icon {
@@ -206,11 +212,11 @@ $light_grey_hover: #EAF3FF;
                     margin-left: auto;
                 }
                 &:hover { 
-                    background: var(--light_gray);
+                    background: var(--l_gr_active);
                     padding-left: 10px;
                 }
                 &.active { 
-                    background: var(--light_gray_active);
+                    background: var(--l_gr_active);
                     padding-left: 10px;
                     // border-left: 3px solid $theme;
                 }

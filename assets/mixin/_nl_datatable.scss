@@ -1,0 +1,60 @@
+.nl_datatable {
+    position: relative;
+    min-height: 200px;
+    .top_controls {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        .nl__length,
+        .nl_search {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+    }
+
+    .nl_shortable {
+        cursor: pointer;
+        position: relative;
+        &::after {
+            content: "▾";
+            display: block;
+            position: absolute;
+            top: 50%;
+            color: #ddd;
+            right: 5px;
+            transform: translateY(-50%);
+        }
+        &.desc,
+        &.asc {
+            &::after {
+                color: rgb(79, 79, 79);
+            }
+        }
+        &.desc {
+            &::after {
+                content: "▴";
+            }
+        }
+    }
+
+    .nl_processing {
+        position: absolute;
+        background: #fff;
+        z-index: 9;
+        top: 50px;
+        left: 50%;
+        transform: translateX(-50%);
+        box-shadow: 0 2px 4px 0 rgba(0,0,0,0.2);
+        min-width: 100px;
+        min-height: 50px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 5px;
+        display: none;
+        &.active {
+            display: flex;
+        }
+    }
+}

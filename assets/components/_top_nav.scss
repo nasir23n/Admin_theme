@@ -1,11 +1,12 @@
+
 .top_nav {
     background: #ffffff;
     position: fixed;
     top: 0;
     right: 0;
-    width: calc(100% - var(--aside));
+    width: calc(100% - var(--aside) - 1px);
     border-bottom: 1px solid #dddddd;
-    border-left: 1px solid #dddddd;
+    // border-left: 1px solid #dddddd;
     height: var(--top_nav_height);
     display: flex;
     justify-content: space-between;
@@ -32,6 +33,14 @@
             text-decoration: none;
             background: var(--light_gray);
         }
+    }
+    .notice {
+        font-size: .6rem;
+        font-weight: 300;
+        padding: 3px 5px;
+        position: absolute;
+        right: 5px;
+        top: 3px;
     }
 
     &>.top_nav_toggle {

@@ -27,6 +27,37 @@ var anim_out_array = [
 	        return this;
 	    }
 
+		notify(x=null) {
+			if (!$('.nl_notify_container').length) {
+				$('body').append(`<div class="nl_notify_container"></div>`);
+			}
+			let notify_content = `<div class="nl_notify animated-fast fadeIn ${x.type && x.type}">
+						<div class="icon">
+							<svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"></path></svg>
+						</div>
+						<div class="text">
+							Lorem ipsum dolor sit amet consectetur, adipisicing elit. Molestias corporis doloremque, corrupti sequi reiciendis ipsam doloribus dolor fugiat perferendis esse. Esse voluptatem veniam velit sapiente accusantium cum reprehenderit tempora soluta!
+						</div>
+						<button class="close">
+							<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><g><path d="M13.414 12l5.793-5.793c.39-.39.39-1.023 0-1.414s-1.023-.39-1.414 0L12 10.586 6.207 4.793c-.39-.39-1.023-.39-1.414 0s-.39 1.023 0 1.414L10.586 12l-5.793 5.793c-.39.39-.39 1.023 0 1.414.195.195.45.293.707.293s.512-.098.707-.293L12 13.414l5.793 5.793c.195.195.45.293.707.293s.512-.098.707-.293c.39-.39.39-1.023 0-1.414L13.414 12z"></path></g></svg>
+						</button>
+					</div>`;
+			$('.nl_notify_container').append(notify_content);
+			
+			let target = $('.nl_notify_container')
+			target.animate({scrollTop: target.prop("scrollHeight")}, 100);
+			// scroll container to bottom
+			$('.nl_notify').find('.close').click(function() {
+				// console.log($(this).parent());
+				$(this).parent().addClass('fadeOutDown');
+				$(this).parent().on('animationend', function () {
+		            if (this.classList.contains('fadeOutDown')) {
+		                $(this).removeClass('fadeOutDown');
+		                $(this).css({ 'display': 'none' });
+		            }
+		        });
+			});
+		}
 	    open(x=null) {
             
 			var modal, 
